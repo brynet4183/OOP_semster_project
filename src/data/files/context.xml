@@ -1,0 +1,31 @@
+<context>
+    <table name="shifts">
+        <col type="int" autoIncrement="t">id</col>
+        <col type="int">start</col>
+        <col type="int">duration</col>
+        <col type="int" fk="t" fkTable="teams" fkCol="id">team_id</col>
+        <col type="int" fk="t" fkTable="volunteers" fkCol="id">volunteer_id</col>
+    </table>
+    <table name="volunteers">
+        <col type="int" autoIncrement="t">id</col>
+        <col type="string">name</col>
+        <col type="string">password</col>
+        <col type="string">salt</col>
+        <col type="Boolean">confrimed</col>
+    </table>
+    <table name="teams">
+        <col type="int" autoIncrement="t">id</col>
+        <col type="string">name</col>
+    </table>
+    <table name="teamAdmins">
+        <col type="int" autoIncrement="t">id</col>
+        <col type="string">name</col>
+        <col type="string">password</col>
+        <col type="string">salt</col>
+        <col type="int" fk="t" fkTable="teams" fkCol="id">team_id</col>
+    </table>
+    <table name="volunteer_teams">
+        <col type="int" fk="t" fkTable="volunteers" fkCol="id">volunteer_id</col>
+        <col type="int" fk="t" fkTable="teams" fkCol="id">team_id</col>
+    </table>
+</context>
