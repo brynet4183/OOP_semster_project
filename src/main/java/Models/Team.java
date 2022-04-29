@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Team {
     private int id;
+    private int line;
     private String name;
     public List<TeamAdmin> teamAdmins;
     public List<Volunteer> volunteers;

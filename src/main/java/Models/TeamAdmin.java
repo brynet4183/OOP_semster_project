@@ -4,6 +4,7 @@ import javax.print.DocFlavor;
 
 public class TeamAdmin {
     private int id;
+    private int line;
     private String name;
     private String password;
     private String salt;

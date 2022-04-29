@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Volunteer {
     private int id;
+    private int line;
     private String name;
     private String password;
     private String salt;

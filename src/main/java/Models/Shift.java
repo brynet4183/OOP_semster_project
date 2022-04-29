@@ -2,6 +2,7 @@ package Models;
 
 public class Shift {
     private int id;
+    private int line;
     private int start;
     private int duration;
     private int team_id;

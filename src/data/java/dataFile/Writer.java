@@ -8,4 +8,7 @@ public class Writer {
 
     public static void edit(String file, int line, String stingVal){
     }
+
+    public static void remove(String file, int line){
+    }
 }
