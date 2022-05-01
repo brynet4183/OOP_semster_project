@@ -27,9 +27,12 @@ public class App extends Application {
     }
 
     public void login() throws IOException {
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeView.fxml"));
+        Scene scene = loader.load();
+        stage.setScene(scene);
     }
-    public void viewReigster() throws IOException{
+
+    public void goReigster() throws IOException{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/RegisterView.fxml"));
             Scene scene = loader.load();
             stage.setScene(scene);
