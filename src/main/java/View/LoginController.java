@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable {
+public class LoginController{
 
     public Label underLoginLabel;
     public TextField loginIDField;
@@ -20,12 +20,6 @@ public class LoginController implements Initializable {
     public RadioButton loginRadioVolunteer;
     public RadioButton loginRadioAdmin;
     private App app;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Initializing LoginController");
-        loginIDField.requestFocus();        //Sætter text cursor i dette field
-    }
 
     public void setParentController(App app) {this.app = app;}
 
@@ -48,7 +42,7 @@ public class LoginController implements Initializable {
 
     public void handleRegisterBtnClick(ActionEvent mouseEvent) {
         try {
-            app.goToReigster();
+            app.goToRegister();
         } catch (IOException e) {
             e.printStackTrace();
         }

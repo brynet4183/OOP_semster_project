@@ -16,13 +16,9 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        this.stage = primaryStage;
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LoginView.fxml"));
-        Scene login = loader.load();
-        LoginController controller = loader.getController();
-        primaryStage.setScene(login);
-        controller.setParentController(this);
+    public void start(Stage stage) throws Exception {
+        this.stage = stage;
+        goToLogin();
         stage.show();
     }
 
@@ -30,6 +26,7 @@ public class App extends Application {
         if (usr == 0) { //admin login
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeView.fxml")); //TODO: change to admin view
             Scene scene = loader.load();
+
             stage.setScene(scene);
         }
         if (usr == 1){
@@ -39,9 +36,19 @@ public class App extends Application {
         }
     }
 
-    public void goToReigster() throws IOException{
+    public void goToRegister() throws IOException{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/RegisterView.fxml"));
             Scene scene = loader.load();
+            RegisterController controller = loader.getController();
+            controller.setParentController(this);
             stage.setScene(scene);
+    }
+
+    public void goToLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LoginView.fxml"));
+        Scene scene = loader.load();
+        LoginController controller = loader.getController();
+        controller.setParentController(this);
+        stage.setScene(scene);
     }
 }
