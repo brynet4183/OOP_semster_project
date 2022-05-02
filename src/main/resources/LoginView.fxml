@@ -5,7 +5,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -22,7 +24,8 @@
   <rowConstraints>
     <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="30.0" minHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="20.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
@@ -32,24 +35,47 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="150.0" />
         </columnConstraints>
         <rowConstraints>
+               <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               <RowConstraints minHeight="5.0" prefHeight="5.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Password:" GridPane.rowIndex="1">
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
+            <Label text="Password:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets left="10.0" />
+                  </GridPane.margin>
             </Label>
-            <Label text="Bruger-ID:">
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
+            <Label text="Bruger-ID:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets left="10.0" />
+                  </GridPane.margin>
             </Label>
-            <PasswordField fx:id="loginPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="loginIDField" GridPane.columnIndex="1" />
-               <Label fx:id="underLoginLabel" alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+            <PasswordField fx:id="loginPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets />
+                  </GridPane.margin></PasswordField>
+            <TextField fx:id="loginIDField" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets />
+                  </GridPane.margin></TextField>
+               <Label text="Log ind som:">
+                  <GridPane.margin>
+                     <Insets left="10.0" />
+                  </GridPane.margin>
+               </Label>
+               <RadioButton fx:id="loginRadioVolunteer" mnemonicParsing="false" selected="true" text="Frivillig" GridPane.columnIndex="1">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="loginRadio" />
+                  </toggleGroup>
+                  <GridPane.margin>
+                     <Insets left="5.0" />
+                  </GridPane.margin>
+               </RadioButton>
+               <RadioButton fx:id="loginRadioAdmin" mnemonicParsing="false" text="Administrator" toggleGroup="$loginRadio" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                  <GridPane.margin>
+                     <Insets right="5.0" />
+                  </GridPane.margin>
+               </RadioButton>
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -60,8 +86,9 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginBtnClick" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
-      <Button mnemonicParsing="false" onAction="#handleRegisterBtnClick" text="Registrér dig" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleLoginBtnClick" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Button mnemonicParsing="false" onAction="#handleRegisterBtnClick" text="Registrér dig" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+         <Label fx:id="underLoginLabel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
    </children>
 </GridPane>
 </Scene>

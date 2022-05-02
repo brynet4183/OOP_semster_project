@@ -26,13 +26,20 @@ public class App extends Application {
         stage.show();
     }
 
-    public void login() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeView.fxml"));
-        Scene scene = loader.load();
-        stage.setScene(scene);
+    public void login(int usr) throws IOException {
+        if (usr == 0) { //admin login
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeView.fxml")); //TODO: change to admin view
+            Scene scene = loader.load();
+            stage.setScene(scene);
+        }
+        if (usr == 1){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeView.fxml")); //TODO: CHANGE TO VOL VIEW
+            Scene scene = loader.load();
+            stage.setScene(scene);
+        }
     }
 
-    public void goReigster() throws IOException{
+    public void goToReigster() throws IOException{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/RegisterView.fxml"));
             Scene scene = loader.load();
             stage.setScene(scene);
