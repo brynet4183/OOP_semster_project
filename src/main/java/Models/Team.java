@@ -7,6 +7,7 @@ public class Team {
     private String name;
     public List<TeamAdmin> teamAdmins;
     public List<Volunteer> volunteers;
+    public List<Shift> shifts;
 
     public Team(int id, String name){
         this.id = id;

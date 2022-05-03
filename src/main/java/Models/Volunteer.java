@@ -24,7 +24,7 @@ public class Volunteer {
         return id;
     }
 
-    public Boolean getConfrimed() {
+    public Boolean getConfirmed() {
         return confrimed;
     }
 
