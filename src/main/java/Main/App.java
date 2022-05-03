@@ -1,5 +1,6 @@
 package Main;
 
+import Controller.HomeController;
 import Controller.LoginController;
 import Controller.RegisterController;
 import data.Context;
@@ -12,10 +13,13 @@ import java.io.IOException;
 public class App extends Application {
     private Stage stage;
     public static Context context = null;
+    public static int loginID = 0;
+    public static int loginType = 0;
     public static void run(){
         context = new Context();
         launch();
     }
+
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -28,13 +32,17 @@ public class App extends Application {
     public void login(int usr) throws IOException {
         //Delementer lånt fra Christian Budtz' GitHub
         if (usr == 0) { //admin login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeView.fxml")); //TODO: change to admin view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml")); //TODO: change to admin view
             Scene scene = loader.load();
+            HomeController controller = loader.getController();
+            controller.setParentController(this);
             stage.setScene(scene);
         }
         if (usr == 1){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml"));
             Scene scene = loader.load();
+            HomeController controller = loader.getController();
+            controller.setParentController(this);
             stage.setScene(scene);
         }
     }

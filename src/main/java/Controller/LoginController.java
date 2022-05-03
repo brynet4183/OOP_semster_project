@@ -32,6 +32,8 @@ public class LoginController{
             if ( loginRadioAdmin.isSelected()){
                 List<TeamAdmin> taList = context.TeamAdmins.selectTeamAdmin((x) -> x.getName().equals(loginIDField.getText()));
                 if(!taList.isEmpty() && taList.get(0).login(loginPasswordField.getText())){
+                    app.loginID = taList.get(0).getId();
+                    app.loginType = 0;
                     app.login(0); //login mode: admin
                     return;
                 }
@@ -39,6 +41,8 @@ public class LoginController{
             else if (loginRadioVolunteer.isSelected()){
                 List<Volunteer> vList = context.Volunteers.selectVolunteer((x) -> x.getName().equals(loginIDField.getText()));
                 if(!vList.isEmpty() && vList.get(0).login(loginPasswordField.getText())){
+                    app.loginID = vList.get(0).getId();
+                    app.loginType = 0;
                     app.login(1);
                     return;
                 }
