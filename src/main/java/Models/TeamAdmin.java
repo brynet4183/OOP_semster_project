@@ -4,7 +4,6 @@ import javax.print.DocFlavor;
 
 public class TeamAdmin {
     private int id;
-    private int line;
     private String name;
     private String password;
     private String salt;
@@ -23,6 +22,12 @@ public class TeamAdmin {
 
     public String getName() {
         return name;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public String getSalt() {
+        return salt;
     }
 
     public void setPassword(String password) {
