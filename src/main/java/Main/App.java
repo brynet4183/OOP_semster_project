@@ -99,6 +99,22 @@ public class App extends Application {
         }
     }
 
-
+    public void editProfile(int usr) throws IOException {
+        //Lånt fra Christian Budtz' GitHub
+        if (usr == 1) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));
+            Scene scene = loader.load();
+            ProfileController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));//todo: change to admin
+            Scene scene = loader.load();
+            ProfileController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+    }
 
 }
