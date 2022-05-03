@@ -3,6 +3,7 @@ package Main;
 import Controller.HomeController;
 import Controller.LoginController;
 import Controller.RegisterController;
+import Controller.WorkplacesOverviewController;
 import data.Context;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -38,7 +39,7 @@ public class App extends Application {
             controller.setParentController(this);
             stage.setScene(scene);
         }
-        if (usr == 1){
+        else if (usr == 1){  //volunteer login
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml"));
             Scene scene = loader.load();
             HomeController controller = loader.getController();
@@ -63,5 +64,23 @@ public class App extends Application {
         LoginController controller = loader.getController();
         controller.setParentController(this);
         stage.setScene(scene);
+    }
+
+    public void goToWorkplaceOverview(int x) throws IOException {
+        //Lånt fra Christian Budtz' GitHub
+        if (x == 1) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplacesView.fxml"));
+            Scene scene = loader.load();
+            WorkplacesOverviewController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplacesView.fxml"));//todo: change to admin
+            Scene scene = loader.load();
+            WorkplacesOverviewController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
     }
 }

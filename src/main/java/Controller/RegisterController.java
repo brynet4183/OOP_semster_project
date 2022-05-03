@@ -22,9 +22,9 @@ public class RegisterController {
     public TextField registerCountryField;
     public TextField registerPhonenoField;
 
-
+    //Struktur af reference til main-controller og funktionskald ved sceneskift
+    //er lånt fra Christian Budtz' GitHub
     private App app;
-
     public void setParentController(App app) {this.app = app;}
 
     public void handleRegistration(ActionEvent actionEvent) {
