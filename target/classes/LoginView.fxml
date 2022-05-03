@@ -89,6 +89,13 @@
       <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleLoginBtnClick" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
       <Button mnemonicParsing="false" onAction="#handleRegisterBtnClick" text="Registrér dig" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
          <Label fx:id="loginStatusLabel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Benedicte &amp; Johnny Inc." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
    </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </padding>
 </GridPane>
 </Scene>
