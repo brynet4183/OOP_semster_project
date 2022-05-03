@@ -1,5 +1,7 @@
-package View;
+package Main;
 
+import Controller.LoginController;
+import Controller.RegisterController;
 import data.Context;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

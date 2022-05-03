@@ -1,9 +1,9 @@
-package View;
+package Controller;
 
+import Main.App;
 import Models.TeamAdmin;
 import Models.Volunteer;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -11,11 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
-import static View.App.context;
+import static Main.App.context;
 
 public class LoginController{
 
