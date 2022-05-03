@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Volunteer {
@@ -18,13 +19,15 @@ public class Volunteer {
         this.password = password;
         this.salt = salt;
         this.confrimed = confrimed;
+        teams = new ArrayList<>();
+        shifts = new ArrayList<>();
     }
 
     public int getId() {
         return id;
     }
 
-    public Boolean getConfrimed() {
+    public Boolean getConfirmed() {
         return confrimed;
     }
 
