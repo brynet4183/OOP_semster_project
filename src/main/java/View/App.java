@@ -1,5 +1,6 @@
 package View;
 
+import data.Context;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,7 +9,9 @@ import java.io.IOException;
 
 public class App extends Application {
     private Stage stage;
+    public static Context context = null;
     public static void run(){
+        context = new Context();
         launch();
     }
 

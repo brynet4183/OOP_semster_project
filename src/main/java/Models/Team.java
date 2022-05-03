@@ -1,5 +1,6 @@
 package Models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
@@ -12,6 +13,9 @@ public class Team {
     public Team(int id, String name){
         this.id = id;
         this.name = name;
+        teamAdmins = new ArrayList<>();
+        volunteers = new ArrayList<>();
+        shifts = new ArrayList<>();
     }
     public String getName() {
         return name;

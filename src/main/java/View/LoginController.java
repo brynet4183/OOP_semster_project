@@ -1,5 +1,7 @@
 package View;
 
+import Models.TeamAdmin;
+import Models.Volunteer;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -10,7 +12,10 @@ import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import static View.App.context;
 
 public class LoginController{
 
@@ -26,16 +31,22 @@ public class LoginController{
     public void setParentController(App app) {this.app = app;}
 
     public void handleLoginBtnClick(ActionEvent actionEvent) throws IOException {
-            if ( loginRadioAdmin.isSelected() &&
-                    "admin".equals(loginIDField.getText()) &&
-                    "admin".equals(loginPasswordField.getText())){
-                app.login(0); //login mode: admin
+            if ( loginRadioAdmin.isSelected()){
+                List<TeamAdmin> taList = context.TeamAdmins.selectTeamAdmin((x) -> x.getName().equals(loginIDField.getText()));
+                if(!taList.isEmpty() && taList.get(0).login(loginPasswordField.getText())){
+                    app.login(0); //login mode: admin
+                    return;
+                }
             }
-            else if (loginRadioVolunteer.isSelected()){ //TODO: currently has no check for credentials
-                app.login(1); //login mode: volunteer
+            else if (loginRadioVolunteer.isSelected()){
+                List<Volunteer> vList = context.Volunteers.selectVolunteer((x) -> x.getName().equals(loginIDField.getText()));
+                if(!vList.isEmpty() && vList.get(0).login(loginPasswordField.getText())){
+                    app.login(1);
+                    return;
+                }
             }
-            else {loginStatusLabel.setText("Forkert ID eller password");
-                  loginStatusLabel.setTextFill(Color.RED);}
+            loginStatusLabel.setText("Forkert ID eller password");
+            loginStatusLabel.setTextFill(Color.RED);
     }
 
     public void handleRegisterBtnClick(ActionEvent mouseEvent) throws IOException {
