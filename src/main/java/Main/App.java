@@ -1,9 +1,6 @@
 package Main;
 
-import Controller.HomeController;
-import Controller.LoginController;
-import Controller.RegisterController;
-import Controller.WorkplacesOverviewController;
+import Controller.*;
 import data.Context;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -66,9 +63,9 @@ public class App extends Application {
         stage.setScene(scene);
     }
 
-    public void goToWorkplaceOverview(int x) throws IOException {
+    public void goToWorkplaceOverview(int usr) throws IOException {
         //Lånt fra Christian Budtz' GitHub
-        if (x == 1) {
+        if (usr == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplacesView.fxml"));
             Scene scene = loader.load();
             WorkplacesOverviewController controller = loader.getController();
@@ -83,4 +80,25 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
+
+    public void goToProfile(int usr) throws IOException {
+        //Lånt fra Christian Budtz' GitHub
+        if (usr == 1) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolProfileView.fxml"));
+            Scene scene = loader.load();
+            ProfileController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolProfileView.fxml"));//todo: change to admin
+            Scene scene = loader.load();
+            ProfileController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+    }
+
+
+
 }

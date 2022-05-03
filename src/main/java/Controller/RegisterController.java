@@ -5,8 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-
 import java.io.IOException;
+import static Main.App.context; //giver adgang til data
 
 public class RegisterController {
     public Label registerStatusLabel;

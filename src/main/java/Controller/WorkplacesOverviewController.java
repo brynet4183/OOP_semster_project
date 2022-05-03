@@ -39,21 +39,30 @@ public class WorkplacesOverviewController implements Initializable {
             name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
         }
         loggedInAsLabel.setText(name);
+        //todo: init workplaces and leader values, variables already made
     }
 
-    public void aGoToHome(ActionEvent actionEvent) throws IOException {
+    //GoTo Block:
+    public void admGoToHome(ActionEvent actionEvent) throws IOException {
         app.login(0);
     }
-    public void vGoToHome(ActionEvent actionEvent) throws IOException {
+    public void volGoToHome(ActionEvent actionEvent) throws IOException {
         app.login(1);
     }
-
-
-    public void vGoToProfile(ActionEvent actionEvent) {
+    public void admGoToProfile(ActionEvent actionEvent) throws IOException{
+        app.goToProfile(0);
+    }
+    public void volGoToProfile(ActionEvent actionEvent) throws IOException {
+        app.goToProfile(1);
+    }
+    public void admGoToWorkplaces(ActionEvent actionEvent) throws IOException {
+        app.goToWorkplaceOverview(0);
+    }
+    public void volGoToWorkplaces(ActionEvent actionEvent) throws IOException {
+        app.goToWorkplaceOverview(1);
+    }
+    public void logOut(ActionEvent actionEvent) throws IOException {
+        app.goToLogin();
     }
 
-    public void vGoToWorkplaces(ActionEvent actionEvent) {
-    }
-
-    
 }
