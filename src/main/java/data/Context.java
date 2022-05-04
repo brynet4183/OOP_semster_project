@@ -102,6 +102,7 @@ public class Context {
         for (Shift s : Shifts.values()) {
             outShifts.add(s.getId() + ";" + s.getStart() + ";" + s.getDuration() + ";" + s.team.getId() + ";" + s.volunteer.getId());
         }
+        Writer.Write("personalInfo", outPersonalInfos);
         Writer.Write("teams", outTeams);
         Writer.Write("volunteer_teams", outVolunteerTeams);
         Writer.Write("teamAdmins", outTeamAdmins);
