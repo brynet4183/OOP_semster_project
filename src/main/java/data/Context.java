@@ -23,10 +23,10 @@ public class Context {
         }
         in = new ArrayList<String>();
         in = Reader.Read("personalInfo");
-        //id,lastName,language,email,phone,country,zip,city,street,number
+        //id,firstName,lastName,language,email,phone,country,zip,city,street,number
         for (String inLine : in) {
             String[] line = inLine.split(";");
-            PersonalInfos.put(Integer.parseInt(line[0]), new PersonalInfo(Integer.parseInt(line[0]), line[1], line[2], line[3], line[4], line[5], Integer.parseInt(line[6]), line[7], line[8], line[9]));
+            PersonalInfos.put(Integer.parseInt(line[0]), new PersonalInfo(Integer.parseInt(line[0]), line[1], line[2], line[3], line[4], line[5], line[6], Integer.parseInt(line[7]), line[8], line[9], line[10]));
         }
         in = new ArrayList<String>();
         in = Reader.Read("teamAdmins");
@@ -70,6 +70,7 @@ public class Context {
     }
     public void Save(){
         List<String> outTeams = new ArrayList<String>();
+        List<String> outPersonalInfos = new ArrayList<String>();
         List<String> outTeamAdmins = new ArrayList<String>();
         List<String> outVolunteers = new ArrayList<String>();
         List<String> outShifts = new ArrayList<String>();
@@ -84,6 +85,10 @@ public class Context {
                     outVolunteerTeams.add(id + ";" + v.getId());
                 }
             }
+        }
+        //id,firstName,lastName,language,email,phone,country,zip,city,street,number
+        for (PersonalInfo pi : PersonalInfos.values()) {
+            outPersonalInfos.add(pi.getId() + ";" + pi.getFirstName() + ";" + pi.getLastName() + ";" + pi.getLanguage() + ";" + pi.getEmail() + ";" + pi.getPhone() + ";" + pi.getCountry() + ";" + pi.getZip() + ";" + pi.getCity() + ";" + pi.getStreet() + ";" + pi.getNumber());
         }
         //id,name,password,salt,team_id
         for (TeamAdmin ta : TeamAdmins.values()) {

@@ -5,6 +5,7 @@ import java.util.List;
 
 public class PersonalInfo implements Model {
     int id;
+    String firstName;
     String lastName;
     String language;
     String email;
@@ -17,8 +18,9 @@ public class PersonalInfo implements Model {
     public List<TeamAdmin> teamAdmins;
     public List<Volunteer> volunteers;
 
-    public PersonalInfo(int id, String lastName, String language, String email, String phone, String country, int zip, String  city, String  street, String  number){
+    public PersonalInfo(int id, String firstName, String lastName, String language, String email, String phone, String country, int zip, String  city, String  street, String  number){
         this.id = id;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.language = language;
         this.email = email;
@@ -37,6 +39,14 @@ public class PersonalInfo implements Model {
     }
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public int getZip() {
