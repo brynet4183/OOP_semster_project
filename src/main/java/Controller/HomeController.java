@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static Main.App.context; //giver adgang til data
+import static Main.App.loginID;
 
 public class HomeController implements Initializable {
 

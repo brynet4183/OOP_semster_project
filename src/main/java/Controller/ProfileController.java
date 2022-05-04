@@ -10,22 +10,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static Main.App.context; //giver adgang til data
-import static Main.App.loginID;
+import static Main.App.*;
 
 public class ProfileController implements Initializable {
     public Label loggedInAsLabel;
-    //Edit mode text fields
-    public TextField firstNameField;
-    public TextField lastNameField;
-    public TextField languageField;
-    public TextField emailField;
-    public TextField phoneNoField;
-    public TextField countryField;
-    public TextField zipField;
-    public TextField cityField;
-    public TextField streetField;
-    public TextField houseNoField;
+    //View mode info text
+
 
     //Struktur af reference til main-controller og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
@@ -65,20 +55,11 @@ public class ProfileController implements Initializable {
     //Edit profile
     public void admGoToEditProfile(ActionEvent actionEvent) throws IOException {
         app.goToEditProfile();
-        //todo: insert values in text fields
     }
     public void volGoToEditProfile(ActionEvent actionEvent) throws IOException {
         app.goToEditProfile();
-        //todo: insert values in text fields
     }
-    public void volSaveProfileChanges(ActionEvent actionEvent) throws IOException {
-
-        context.Volunteers.get(loginID).setName(firstNameField.getText());
-
-        //todo: save ALL fields
 
 
-        context.Save();
-        app.goToProfile();
-    }
+
 }

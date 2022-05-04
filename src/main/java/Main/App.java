@@ -12,6 +12,7 @@ public class App extends Application {
     private Stage stage;
     public static Context context = null;
     public static int loginID = 0;
+    public static int workPlace = 0;
     public static int loginType = 0;
     public static void run(){
         context = new Context();
@@ -87,6 +88,7 @@ public class App extends Application {
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
+            workPlace = workplace;
             stage.setScene(scene);
         }
         else{
@@ -94,6 +96,7 @@ public class App extends Application {
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
+            workPlace = workplace;
             stage.setScene(scene);
         }
     }

@@ -35,6 +35,7 @@ public class AWorkplaceController implements Initializable {
             name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
         }
         loggedInAsLabel.setText(name);
+
         //todo: init workplace fields
     }
 

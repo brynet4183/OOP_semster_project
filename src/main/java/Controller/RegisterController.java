@@ -30,6 +30,8 @@ public class RegisterController {
     public void handleRegistration(ActionEvent actionEvent) {
     //Todo: lav en metode her lol
         if (allFieldsFilled()){
+
+
             registerStatusLabel.setText("Du er nu registreret"); //ToDo: det her skal kun dukke op upon conf
             registerStatusLabel.setTextFill(Color.GREEN);
         }
@@ -40,12 +42,8 @@ public class RegisterController {
 
     }
 
-    public void handleBackClicked(ActionEvent actionEvent) {
-        try {
+    public void handleBackClicked(ActionEvent actionEvent) throws IOException {
             app.goToLogin();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
     public boolean allFieldsFilled(){
         if( registerFirstnameField.getText()!=""    &&
@@ -61,4 +59,8 @@ public class RegisterController {
             return true;}
             else {return false;}
     }
+    public void saveData(){
+
+    }
+
 }
