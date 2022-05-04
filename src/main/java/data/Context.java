@@ -90,13 +90,13 @@ public class Context {
         for (PersonalInfo pi : PersonalInfos.values()) {
             outPersonalInfos.add(pi.getId() + ";" + pi.getFirstName() + ";" + pi.getLastName() + ";" + pi.getLanguage() + ";" + pi.getEmail() + ";" + pi.getPhone() + ";" + pi.getCountry() + ";" + pi.getZip() + ";" + pi.getCity() + ";" + pi.getStreet() + ";" + pi.getNumber());
         }
-        //id,name,password,salt,team_id
+        //id,name,password,salt,team_id,personalInfo_id
         for (TeamAdmin ta : TeamAdmins.values()) {
-            outTeamAdmins.add(ta.getId() + ";" + ta.getName() + ";" + ta.getPassword() + ";" + ta.getSalt() + ";" + ta.team.getId());
+            outTeamAdmins.add(ta.getId() + ";" + ta.getName() + ";" + ta.getPassword() + ";" + ta.getSalt() + ";" + ta.team.getId() + ";" + ta.personalInfo.getId());
         }
-        //id,name,password,salt,confirmed
+        //id,name,password,salt,confirmed,personalInfo_id
         for (Volunteer v : Volunteers.values()) {
-            outVolunteers.add(v.getId() + ";" + v.getName() + ";" + v.getPassword() + ";" + v.getSalt() + ";" + v.getConfirmed());
+            outVolunteers.add(v.getId() + ";" + v.getName() + ";" + v.getPassword() + ";" + v.getSalt() + ";" + v.getConfirmed() + ";" + v.personalInfo.getId());
         }
         //id,start,duration,team_id,volunteer_id
         for (Shift s : Shifts.values()) {
