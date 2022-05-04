@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static Main.App.context; //giver adgang til data
+import static Main.App.loginID;
 
 public class ProfileController implements Initializable {
     public Label loggedInAsLabel;
@@ -36,10 +37,11 @@ public class ProfileController implements Initializable {
         System.out.println("Init Profilectrl");
         String name = null;
         if (app.loginType == 1){
-            name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+            //name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+            name = context.Volunteers.get(loginID).getName();
         }
         else {
-            name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()== app.loginID).get(0).getName();
+            name = context.TeamAdmins.get(loginID).getName();
         }
         loggedInAsLabel.setText(name);
         //todo: init personal values
@@ -70,10 +72,21 @@ public class ProfileController implements Initializable {
     }
 
     //Edit profile
-    public void volEditProfile(ActionEvent actionEvent) throws IOException {
-        app.editProfile(1);
+    public void admGoToEditProfile(ActionEvent actionEvent) throws IOException {
+        app.goToEditProfile(0);
     }
-    public void saveProfileChanges(ActionEvent actionEvent) throws IOException {
+    public void volGoToEditProfile(ActionEvent actionEvent) throws IOException {
+        app.goToEditProfile(1);
+        //todo: insert values in text fields
+    }
+    public void volSaveProfileChanges(ActionEvent actionEvent) throws IOException {
+
+        context.Volunteers.get(loginID).setName(firstNameField.getText());
+
+
+
+
+        context.Save();
         app.goToProfile(1); //todo: save changes
     }
 }

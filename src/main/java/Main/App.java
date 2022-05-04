@@ -115,7 +115,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
-    public void editProfile(int usr) throws IOException {
+    public void goToEditProfile(int usr) throws IOException {
         //Lånt fra Christian Budtz' GitHub
         if (usr == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));

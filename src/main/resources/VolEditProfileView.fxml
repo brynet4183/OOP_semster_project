@@ -129,7 +129,7 @@
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" GridPane.rowIndex="3" />
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tlf. nr.:" GridPane.rowIndex="4" />
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse:" GridPane.rowIndex="5" />
-                            <Button mnemonicParsing="false" onAction="#saveProfileChanges" text="Gem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                            <Button mnemonicParsing="false" onAction="#volSaveProfileChanges" text="Gem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
                         <GridPane.margin>
                            <Insets right="5.0" />
                         </GridPane.margin></Button>
