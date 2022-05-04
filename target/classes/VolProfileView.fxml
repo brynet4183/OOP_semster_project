@@ -137,7 +137,7 @@
                      <Text fx:id="street" strokeType="OUTSIDE" strokeWidth="0.0" text="Street" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                      <Text fx:id="houseNo" strokeType="OUTSIDE" strokeWidth="0.0" text="No" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                      <Text fx:id="country" strokeType="OUTSIDE" strokeWidth="0.0" text="Country" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                     <Button mnemonicParsing="false" onAction="#volEditProfile" text="Redigér Profil" GridPane.columnIndex="2" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                     <Button mnemonicParsing="false" onAction="#volGoToEditProfile" text="Redigér Profil" GridPane.columnIndex="2" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
                         <GridPane.margin>
                            <Insets />
                         </GridPane.margin></Button>
