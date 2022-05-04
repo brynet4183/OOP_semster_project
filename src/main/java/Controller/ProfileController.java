@@ -74,6 +74,7 @@ public class ProfileController implements Initializable {
     //Edit profile
     public void admGoToEditProfile(ActionEvent actionEvent) throws IOException {
         app.goToEditProfile(0);
+        //todo: insert values in text fields
     }
     public void volGoToEditProfile(ActionEvent actionEvent) throws IOException {
         app.goToEditProfile(1);
@@ -83,10 +84,10 @@ public class ProfileController implements Initializable {
 
         context.Volunteers.get(loginID).setName(firstNameField.getText());
 
-
+        //todo: save ALL fields
 
 
         context.Save();
-        app.goToProfile(1); //todo: save changes
+        app.goToProfile(1);
     }
 }
