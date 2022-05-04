@@ -64,8 +64,6 @@ public class EditProfileController implements Initializable {
             houseNoField.setText(context.TeamAdmins.get(loginID).personalInfo.getNumber());
         }
         loggedInAsLabel.setText(name);
-        //todo: init personal values
-        //todo: insert values in text fields
     }
 
 
@@ -94,7 +92,6 @@ public class EditProfileController implements Initializable {
             context.TeamAdmins.get(loginID).personalInfo.setStreet(streetField.getText());
             context.TeamAdmins.get(loginID).personalInfo.setNumber(houseNoField.getText());
         }
-        //todo: mangler first name!
         context.Save();
         app.goToProfile();
     }
