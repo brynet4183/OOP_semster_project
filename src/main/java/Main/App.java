@@ -123,14 +123,14 @@ public class App extends Application {
         if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));
             Scene scene = loader.load();
-            ProfileController controller = loader.getController();
+            EditProfileController controller = loader.getController();
             controller.setParentController(this);
             stage.setScene(scene);
         }
         else{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));//todo: change to admin
             Scene scene = loader.load();
-            ProfileController controller = loader.getController();
+            EditProfileController controller = loader.getController();
             controller.setParentController(this);
             stage.setScene(scene);
         }

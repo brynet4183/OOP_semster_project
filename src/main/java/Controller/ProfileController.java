@@ -53,10 +53,8 @@ public class ProfileController implements Initializable {
     }
 
     //Edit profile
-    public void admGoToEditProfile(ActionEvent actionEvent) throws IOException {
-        app.goToEditProfile();
-    }
-    public void volGoToEditProfile(ActionEvent actionEvent) throws IOException {
+
+    public void goToEditProfile(ActionEvent actionEvent) throws IOException {
         app.goToEditProfile();
     }
 

@@ -38,7 +38,7 @@ public class EditProfileController implements Initializable {
         if (app.loginType == 1){
             //name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
             name = context.Volunteers.get(loginID).getName();
-            //firstNameField.setText(context.Volunteers.get(loginID).personalInfo.getFirstName);
+            firstNameField.setText(context.Volunteers.get(loginID).personalInfo.getFirstName());
             lastNameField.setText(context.Volunteers.get(loginID).personalInfo.getLastName());
             languageField.setText(context.Volunteers.get(loginID).personalInfo.getLanguage());
             emailField.setText(context.Volunteers.get(loginID).personalInfo.getEmail());
@@ -52,6 +52,16 @@ public class EditProfileController implements Initializable {
         }
         else {
             name = context.TeamAdmins.get(loginID).getName();
+            firstNameField.setText(context.TeamAdmins.get(loginID).personalInfo.getFirstName());
+            lastNameField.setText(context.TeamAdmins.get(loginID).personalInfo.getLastName());
+            languageField.setText(context.TeamAdmins.get(loginID).personalInfo.getLanguage());
+            emailField.setText(context.TeamAdmins.get(loginID).personalInfo.getEmail());
+            phoneNoField.setText(context.TeamAdmins.get(loginID).personalInfo.getPhone());
+            countryField.setText(context.TeamAdmins.get(loginID).personalInfo.getCountry());
+            zipField.setText(Integer.toString(context.TeamAdmins.get(loginID).personalInfo.getZip()));
+            cityField.setText(context.TeamAdmins.get(loginID).personalInfo.getCity());
+            streetField.setText(context.TeamAdmins.get(loginID).personalInfo.getStreet());
+            houseNoField.setText(context.TeamAdmins.get(loginID).personalInfo.getNumber());
         }
         loggedInAsLabel.setText(name);
         //todo: init personal values
@@ -59,9 +69,9 @@ public class EditProfileController implements Initializable {
     }
 
 
-    public void volSaveProfileChanges(ActionEvent actionEvent) throws IOException {
+    public void saveProfileChanges(ActionEvent actionEvent) throws IOException {
         if(loginType==1){
-            //context.Volunteers.get(loginID).personalInfo.setFirstName(firstNameField.getText());
+            context.Volunteers.get(loginID).personalInfo.setFirstName(firstNameField.getText());
             context.Volunteers.get(loginID).personalInfo.setLastName(lastNameField.getText());
             context.Volunteers.get(loginID).personalInfo.setLanguage(languageField.getText());
             context.Volunteers.get(loginID).personalInfo.setEmail(emailField.getText());
@@ -73,7 +83,7 @@ public class EditProfileController implements Initializable {
             context.Volunteers.get(loginID).personalInfo.setNumber(houseNoField.getText());
         }
         else {
-            //context.TeamAdmins.get(loginID).personalInfo.setFirstName(firstNameField.getText());
+            context.TeamAdmins.get(loginID).personalInfo.setFirstName(firstNameField.getText());
             context.TeamAdmins.get(loginID).personalInfo.setLastName(lastNameField.getText());
             context.TeamAdmins.get(loginID).personalInfo.setLanguage(languageField.getText());
             context.TeamAdmins.get(loginID).personalInfo.setEmail(emailField.getText());
@@ -87,6 +97,19 @@ public class EditProfileController implements Initializable {
         //todo: mangler first name!
         context.Save();
         app.goToProfile();
+    }
+    //GoTo Block:
+    public void goToHome(ActionEvent actionEvent) throws IOException {
+        app.login();
+    }
+    public void goToProfile(ActionEvent actionEvent) throws IOException{
+        app.goToProfile();
+    }
+    public void goToWorkplaces(ActionEvent actionEvent) throws IOException {
+        app.goToWorkplaceOverview();
+    }
+    public void logOut(ActionEvent actionEvent) throws IOException {
+        app.goToLogin();
     }
 
 
