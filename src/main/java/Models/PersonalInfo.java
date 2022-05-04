@@ -3,7 +3,7 @@ package Models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonalInfo {
+public class PersonalInfo implements Model {
     int id;
     String lastName;
     String language;
@@ -34,6 +34,9 @@ public class PersonalInfo {
 
     public int getId() {
         return id;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getZip() {

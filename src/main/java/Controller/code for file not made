@@ -1,0 +1,31 @@
+//add team
+
+
+//edit team
+
+//add admin
+
+//add user to team
+
+//remove user from team
+context.Shifts.insert(Shift model);
+
+//add shift
+Shift new_shift = new Shift(0, $start, $duration);
+new_shift.volunteer = context.Volunteer.get($Volunteerid);
+new_shift.team = context.Teams.get($Volunteerid);
+context.Shifts.insert(new_shift);
+context.Save();
+
+//remove shift
+context.Shifts.remove($id);
+context.Save();
+
+//edit Shift
+context.Shifts($id).setXxx($input);
+context.Save();
+
+//get Team Shifts
+context.Teams.get($id).shifts;
+//get user Shifts
+context.Volunteer.get($id).shifts;

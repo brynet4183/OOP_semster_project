@@ -1,6 +1,6 @@
 package Models;
 
-public class Shift {
+public class Shift implements Model {
     private int id;
     private int start;
     private int duration;
@@ -24,6 +24,9 @@ public class Shift {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     public void setDuration(int duration) {
         this.duration = duration;
     }

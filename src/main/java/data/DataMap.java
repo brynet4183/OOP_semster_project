@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class DataMap<K extends Integer, V> extends HashMap<K, V> {
+public class DataMap<K extends Integer, V extends Model> extends HashMap<K, V> {
     public List<V> selectTeam(WhereTeam ws){
         List<V> rd = new ArrayList<>();
         for (V v : this.values()) {
@@ -48,6 +48,7 @@ public class DataMap<K extends Integer, V> extends HashMap<K, V> {
         int l = this.keySet().toArray().length;
         Object lastId = this.keySet().toArray()[l-1];
         Integer id = ((Integer)lastId)+1;
+        v.setId(id);
         this.put((K)id, v);
     }
 
@@ -62,5 +63,8 @@ public class DataMap<K extends Integer, V> extends HashMap<K, V> {
     }
     public interface WhereVolunteer {
         Boolean run(Volunteer model);
+    }
+    public interface WherePersonalInfo {
+        Boolean run(PersonalInfo model);
     }
 }

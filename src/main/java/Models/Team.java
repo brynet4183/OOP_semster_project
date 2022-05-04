@@ -3,7 +3,7 @@ package Models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team {
+public class Team implements Model{
     private int id;
     private String name;
     public List<TeamAdmin> teamAdmins;
@@ -16,6 +16,9 @@ public class Team {
         teamAdmins = new ArrayList<>();
         volunteers = new ArrayList<>();
         shifts = new ArrayList<>();
+    }
+    public void setId(int id) {
+        this.id = id;
     }
     public String getName() {
         return name;

@@ -3,7 +3,7 @@ package Models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Volunteer {
+public class Volunteer implements Model{
     private int id;
     private String name;
     private String password;
@@ -62,6 +62,9 @@ public class Volunteer {
         }
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
     private String hash(String password) {
         if(this.salt == null)
             this.salt = "something";
