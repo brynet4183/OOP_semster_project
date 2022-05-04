@@ -4,9 +4,7 @@ import Main.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,21 +12,17 @@ import java.util.ResourceBundle;
 
 import static Main.App.context;
 
-public class WorkplacesOverviewController implements Initializable {
+public class AWorkplaceController implements Initializable {
+
     @FXML
     private Label loggedInAsLabel;
-
-    public Hyperlink workplace0;
-    public Hyperlink workplace1;
-    public Hyperlink workplace2;
-    public Text leader0;
-    public Text leader1;
-    public Text leader2;
 
     //Struktur af reference til main-controller og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
     public void setParentController(App app) {this.app = app;}
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -41,8 +35,10 @@ public class WorkplacesOverviewController implements Initializable {
             name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
         }
         loggedInAsLabel.setText(name);
-        //todo: init workplaces and leader values, variables already made
+        //todo: init workplace fields
     }
+
+
 
     //GoTo Block:
     public void admGoToHome(ActionEvent actionEvent) throws IOException {
@@ -65,26 +61,6 @@ public class WorkplacesOverviewController implements Initializable {
     }
     public void logOut(ActionEvent actionEvent) throws IOException {
         app.goToLogin();
-    }
-
-
-    public void volGoToWorkplace0(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(0,0);
-    }
-    public void admGoToWorkplace0(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(1,0);
-    }
-    public void volGoToWorkplace1(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(0,1);
-    }
-    public void admGoToWorkplace1(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(1,1);
-    }
-    public void admGoToWorkplace2(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(0,2);
-    }
-    public void volGoToWorkplace2(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(1,2);
     }
 
 }

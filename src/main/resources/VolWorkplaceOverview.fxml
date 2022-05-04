@@ -117,9 +117,9 @@
                      <Insets />
                   </GridPane.margin>
                   <children>
-                     <Hyperlink fx:id="workplace0" text="Hyperlink" underline="true" GridPane.rowIndex="1" />
-                     <Hyperlink fx:id="workplace1" text="Hyperlink" underline="true" GridPane.rowIndex="2" />
-                     <Hyperlink fx:id="workplace2" text="Hyperlink" underline="true" GridPane.rowIndex="3" />
+                     <Hyperlink fx:id="workplace0" onAction="#volGoToWorkplace0" text="Hyperlink" underline="true" GridPane.rowIndex="1" />
+                     <Hyperlink fx:id="workplace1" onAction="#volGoToWorkplace1" text="Hyperlink" underline="true" GridPane.rowIndex="2" />
+                     <Hyperlink fx:id="workplace2" onAction="#volGoToWorkplace2" text="Hyperlink" underline="true" GridPane.rowIndex="3" />
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Leder:" GridPane.columnIndex="1" />
                      <Text fx:id="leader0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      <Text fx:id="leader1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />

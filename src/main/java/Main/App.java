@@ -66,16 +66,33 @@ public class App extends Application {
     public void goToWorkplaceOverview(int usr) throws IOException {
         //Lånt fra Christian Budtz' GitHub
         if (usr == 1) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplacesView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplaceOverview.fxml"));
             Scene scene = loader.load();
             WorkplacesOverviewController controller = loader.getController();
             controller.setParentController(this);
             stage.setScene(scene);
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplacesView.fxml"));//todo: change to admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplaceOverview.fxml"));//todo: change to admin
             Scene scene = loader.load();
             WorkplacesOverviewController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+    }
+    public void goToAWorkplace(int usr, int workplace) throws IOException {//todo: implement picking workplace from parameter
+        //Lånt fra Christian Budtz' GitHub
+        if (usr == 1) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolAWorkplaceView.fxml"));
+            Scene scene = loader.load();
+            AWorkplaceController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
+        }
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolAWorkplaceView.fxml\""));//todo: change to admin
+            Scene scene = loader.load();
+            AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
             stage.setScene(scene);
         }
@@ -98,7 +115,6 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
-
     public void editProfile(int usr) throws IOException {
         //Lånt fra Christian Budtz' GitHub
         if (usr == 1) {
