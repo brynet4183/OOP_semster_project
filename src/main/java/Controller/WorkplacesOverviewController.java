@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static Main.App.context;
+import static Main.App.loginID;
 
 public class WorkplacesOverviewController implements Initializable {
     @FXML
@@ -25,7 +26,7 @@ public class WorkplacesOverviewController implements Initializable {
     public Text leader1;
     public Text leader2;
 
-    //Struktur af reference til main-controller og funktionskald ved sceneskift
+    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
     public void setParentController(App app) {this.app = app;}
@@ -38,7 +39,7 @@ public class WorkplacesOverviewController implements Initializable {
             name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
         }
         else {
-            name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
+            name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
         }
         loggedInAsLabel.setText(name);
         //todo: init workplaces and leader values, variables already made

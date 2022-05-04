@@ -29,7 +29,7 @@ public class ProfileController implements Initializable {
     //View mode info text
 
 
-    //Struktur af reference til main-controller og funktionskald ved sceneskift
+    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
     public void setParentController(App app) {this.app = app;}
@@ -39,7 +39,7 @@ public class ProfileController implements Initializable {
         System.out.println("Init Profilectrl");
         String name = null;
         if (app.loginType == 1){
-            //firstName = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+            name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
             firstName.setText(context.Volunteers.get(loginID).personalInfo.getFirstName());
             lastName.setText(context.Volunteers.get(loginID).personalInfo.getLastName());
             language.setText(context.Volunteers.get(loginID).personalInfo.getLanguage());
@@ -53,6 +53,7 @@ public class ProfileController implements Initializable {
 
         }
         else {
+            name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
             firstName.setText(context.TeamAdmins.get(loginID).personalInfo.getFirstName());
             lastName.setText(context.TeamAdmins.get(loginID).personalInfo.getLastName());
             language.setText(context.TeamAdmins.get(loginID).personalInfo.getLanguage());

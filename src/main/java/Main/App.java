@@ -31,14 +31,14 @@ public class App extends Application {
     public void login() throws IOException {
         //Delementer lånt fra Christian Budtz' GitHub
         if (loginType == 0) { //admin login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml")); //TODO: change to admin view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolHomeView.fxml")); //TODO: change to admin view
             Scene scene = loader.load();
             HomeController controller = loader.getController();
             controller.setParentController(this);
             stage.setScene(scene);
         }
         else if (loginType == 1){  //volunteer login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolHomeView.fxml"));
             Scene scene = loader.load();
             HomeController controller = loader.getController();
             controller.setParentController(this);

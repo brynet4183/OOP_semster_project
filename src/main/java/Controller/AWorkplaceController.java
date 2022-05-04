@@ -11,13 +11,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static Main.App.context;
+import static Main.App.loginID;
 
 public class AWorkplaceController implements Initializable {
 
     @FXML
     private Label loggedInAsLabel;
 
-    //Struktur af reference til main-controller og funktionskald ved sceneskift
+    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
     public void setParentController(App app) {this.app = app;}
@@ -26,13 +27,13 @@ public class AWorkplaceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println("Init WorkplaceOverviewctrl");
+        System.out.println("Init WorkplaceOverviewCtrl");
         String name = null;
         if (app.loginType == 1){
             name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
         }
         else {
-            name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
+            name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
         }
         loggedInAsLabel.setText(name);
 

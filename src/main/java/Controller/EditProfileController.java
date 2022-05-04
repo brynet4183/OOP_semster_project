@@ -51,7 +51,7 @@ public class EditProfileController implements Initializable {
 
         }
         else {
-            name = context.TeamAdmins.get(loginID).getName();
+            name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
             firstNameField.setText(context.TeamAdmins.get(loginID).personalInfo.getFirstName());
             lastNameField.setText(context.TeamAdmins.get(loginID).personalInfo.getLastName());
             languageField.setText(context.TeamAdmins.get(loginID).personalInfo.getLanguage());
