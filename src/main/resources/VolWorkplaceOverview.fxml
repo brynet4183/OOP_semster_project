@@ -55,17 +55,17 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#volGoToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="1">
+                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="1">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#volGoToHome" text="Hjem" underline="true">
+                    <Hyperlink onAction="#goToHome" text="Hjem" underline="true">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#volGoToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
+                    <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
                 </children>
                 <GridPane.margin>
                     <Insets left="5.0" />
@@ -117,9 +117,9 @@
                      <Insets />
                   </GridPane.margin>
                   <children>
-                     <Hyperlink fx:id="workplace0" onAction="#volGoToWorkplace0" text="Hyperlink" underline="true" GridPane.rowIndex="1" />
-                     <Hyperlink fx:id="workplace1" onAction="#volGoToWorkplace1" text="Hyperlink" underline="true" GridPane.rowIndex="2" />
-                     <Hyperlink fx:id="workplace2" onAction="#volGoToWorkplace2" text="Hyperlink" underline="true" GridPane.rowIndex="3" />
+                     <Hyperlink fx:id="workplace0" onAction="#goToWorkplace0" text="Hyperlink" underline="true" GridPane.rowIndex="1" />
+                     <Hyperlink fx:id="workplace1" onAction="#goToWorkplace1" text="Hyperlink" underline="true" GridPane.rowIndex="2" />
+                     <Hyperlink fx:id="workplace2" onAction="#goToWorkplace2" text="Hyperlink" underline="true" GridPane.rowIndex="3" />
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Leder:" GridPane.columnIndex="1" />
                      <Text fx:id="leader0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      <Text fx:id="leader1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />

@@ -35,7 +35,7 @@ public class LoginController{
                 if(!taList.isEmpty() && taList.get(0).login(loginPasswordField.getText())){
                     app.loginID = taList.get(0).getId();
                     app.loginType = 0;
-                    app.login(0); //login mode: admin
+                    app.login(); //login mode: admin
                     return;
                 }
             }
@@ -44,7 +44,7 @@ public class LoginController{
                 if(!vList.isEmpty() && vList.get(0).login(loginPasswordField.getText())){
                     app.loginID = vList.get(0).getId();
                     app.loginType = 1;
-                    app.login(1);
+                    app.login();
                     return;
                 }
             }

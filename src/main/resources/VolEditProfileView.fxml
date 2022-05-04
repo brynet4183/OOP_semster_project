@@ -57,17 +57,17 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#volGoToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="1">
+                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="1">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#volGoToHome" text="Hjem" underline="true">
+                    <Hyperlink onAction="#goToHome" text="Hjem" underline="true">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#volGoToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
+                    <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
                 </children>
                 <GridPane.margin>
                     <Insets left="5.0" />
@@ -133,7 +133,7 @@
                         <GridPane.margin>
                            <Insets right="5.0" />
                         </GridPane.margin></Button>
-                     <Button mnemonicParsing="false" onAction="#volGoToProfile" text="Tilbage" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <Button mnemonicParsing="false" onAction="#goToProfile" text="Tilbage" GridPane.columnIndex="2" GridPane.rowIndex="8">
                         <GridPane.margin>
                            <Insets left="5.0" />
                         </GridPane.margin>

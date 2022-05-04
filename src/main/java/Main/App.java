@@ -27,16 +27,16 @@ public class App extends Application {
         stage.show();
     }
 
-    public void login(int usr) throws IOException {
+    public void login() throws IOException {
         //Delementer lånt fra Christian Budtz' GitHub
-        if (usr == 0) { //admin login
+        if (loginType == 0) { //admin login
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml")); //TODO: change to admin view
             Scene scene = loader.load();
             HomeController controller = loader.getController();
             controller.setParentController(this);
             stage.setScene(scene);
         }
-        else if (usr == 1){  //volunteer login
+        else if (loginType == 1){  //volunteer login
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerHomeView.fxml"));
             Scene scene = loader.load();
             HomeController controller = loader.getController();
@@ -63,9 +63,9 @@ public class App extends Application {
         stage.setScene(scene);
     }
 
-    public void goToWorkplaceOverview(int usr) throws IOException {
+    public void goToWorkplaceOverview() throws IOException {
         //Lånt fra Christian Budtz' GitHub
-        if (usr == 1) {
+        if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplaceOverview.fxml"));
             Scene scene = loader.load();
             WorkplacesOverviewController controller = loader.getController();
@@ -80,9 +80,9 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
-    public void goToAWorkplace(int usr, int workplace) throws IOException {//todo: implement picking workplace from parameter
+    public void goToAWorkplace(int workplace) throws IOException {//todo: implement picking workplace from parameter
         //Lånt fra Christian Budtz' GitHub
-        if (usr == 1) {
+        if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolAWorkplaceView.fxml"));
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
@@ -98,9 +98,9 @@ public class App extends Application {
         }
     }
 
-    public void goToProfile(int usr) throws IOException {
+    public void goToProfile() throws IOException {
         //Lånt fra Christian Budtz' GitHub
-        if (usr == 1) {
+        if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolProfileView.fxml"));
             Scene scene = loader.load();
             ProfileController controller = loader.getController();
@@ -115,9 +115,9 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
-    public void goToEditProfile(int usr) throws IOException {
+    public void goToEditProfile() throws IOException {
         //Lånt fra Christian Budtz' GitHub
-        if (usr == 1) {
+        if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));
             Scene scene = loader.load();
             ProfileController controller = loader.getController();

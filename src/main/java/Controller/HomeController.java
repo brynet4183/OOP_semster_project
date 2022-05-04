@@ -36,23 +36,14 @@ public class HomeController implements Initializable {
     }
 
     //GoTo Block:
-    public void admGoToHome(ActionEvent actionEvent) throws IOException {
-        app.login(0);
+    public void goToHome(ActionEvent actionEvent) throws IOException {
+        app.login();
     }
-    public void volGoToHome(ActionEvent actionEvent) throws IOException {
-        app.login(1);
+    public void goToProfile(ActionEvent actionEvent) throws IOException{
+        app.goToProfile();
     }
-    public void admGoToProfile(ActionEvent actionEvent) throws IOException{
-        app.goToProfile(0);
-    }
-    public void volGoToProfile(ActionEvent actionEvent) throws IOException {
-        app.goToProfile(1);
-    }
-    public void admGoToWorkplaces(ActionEvent actionEvent) throws IOException {
-        app.goToWorkplaceOverview(0);
-    }
-    public void volGoToWorkplaces(ActionEvent actionEvent) throws IOException {
-        app.goToWorkplaceOverview(1);
+    public void goToWorkplaces(ActionEvent actionEvent) throws IOException {
+        app.goToWorkplaceOverview();
     }
     public void logOut(ActionEvent actionEvent) throws IOException {
         app.goToLogin();
