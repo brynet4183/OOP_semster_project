@@ -10,6 +10,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
+import java.awt.desktop.SystemEventListener;
 import java.io.IOException;
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class LoginController{
                 List<Volunteer> vList = context.Volunteers.selectVolunteer((x) -> x.getName().equals(loginIDField.getText()));
                 if(!vList.isEmpty() && vList.get(0).login(loginPasswordField.getText())){
                     app.loginID = vList.get(0).getId();
-                    app.loginType = 0;
+                    app.loginType = 1;
                     app.login(1);
                     return;
                 }

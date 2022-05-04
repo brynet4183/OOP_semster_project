@@ -89,7 +89,7 @@
                             <RowConstraints vgrow="SOMETIMES" />
                         </rowConstraints>
                         <children>
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dine Arbejdspladser" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                            <Text fx:id="workplaceTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="WORKPLACE" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                                 <font>
                                     <Font size="24.0" />
                                 </font>
@@ -116,16 +116,16 @@
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
-                        <children>
-                            <Hyperlink fx:id="workplace0" text="Hyperlink" underline="true" GridPane.rowIndex="1" />
-                            <Hyperlink fx:id="workplace1" text="Hyperlink" underline="true" GridPane.rowIndex="2" />
-                            <Hyperlink fx:id="workplace2" text="Hyperlink" underline="true" GridPane.rowIndex="3" />
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Leder:" GridPane.columnIndex="1" />
-                            <Text fx:id="leader0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                            <Text fx:id="leader1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                            <Text fx:id="leader2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arbejdsplads:" />
-                        </children>
+                  <children>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ledere:" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vagtplan:" GridPane.rowIndex="2" />
+                     <Text fx:id="workplaceLeaderList" strokeType="OUTSIDE" strokeWidth="0.0" text="LEADERS" GridPane.columnIndex="1" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CALENDAR" GridPane.rowIndex="4">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Text>
+                  </children>
                     </GridPane>
                 </children>
                 <GridPane.margin>

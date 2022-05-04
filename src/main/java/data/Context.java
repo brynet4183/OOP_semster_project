@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Context {
     public DataMap<Integer, Shift> Shifts = new DataMap<Integer, Shift>();
+    public DataMap<Integer, PersonalInfo> PersonalInfos = new DataMap<Integer, PersonalInfo>();
     public DataMap<Integer,Team> Teams = new DataMap<Integer,Team>();
     public DataMap<Integer,TeamAdmin> TeamAdmins = new DataMap<Integer,TeamAdmin>();
     public DataMap<Integer,Volunteer> Volunteers = new DataMap<Integer,Volunteer>();
@@ -21,20 +22,31 @@ public class Context {
             Teams.put(Integer.parseInt(line[0]), new Team(Integer.parseInt(line[0]), line[1]));
         }
         in = new ArrayList<String>();
+        in = Reader.Read("personalInfo");
+        //id,lastName,language,email,phone,country,zip,city,street,number
+        for (String inLine : in) {
+            String[] line = inLine.split(";");
+            PersonalInfos.put(Integer.parseInt(line[0]), new PersonalInfo(Integer.parseInt(line[0]), line[1], line[2], line[3], line[4], line[5], Integer.parseInt(line[6]), line[7], line[8], line[9]));
+        }
+        in = new ArrayList<String>();
         in = Reader.Read("teamAdmins");
-        //id,name,password,salt,team_id
+        //id,name,password,salt,team_id,personalInfo_id
         for (String inLine : in) {
             String[] line = inLine.split(";");
             TeamAdmins.put(Integer.parseInt(line[0]), new TeamAdmin(Integer.parseInt(line[0]), line[1], line[2], line[3]));
             TeamAdmins.get(Integer.parseInt(line[0])).team = Teams.get(Integer.parseInt(line[4]));
             Teams.get(Integer.parseInt(line[4])).teamAdmins.add(TeamAdmins.get(Integer.parseInt(line[0])));
+            TeamAdmins.get(Integer.parseInt(line[0])).personalInfo = PersonalInfos.get(Integer.parseInt(line[5]));
+            PersonalInfos.get(Integer.parseInt(line[5])).teamAdmins.add(TeamAdmins.get(Integer.parseInt(line[0])));
         }
         in = new ArrayList<String>();
         in = Reader.Read("volunteers");
-        //id,name,password,salt,confirmed
+        //id,name,password,salt,confirmed,personalInfo_id
         for (String inLine : in) {
             String[] line = inLine.split(";");
             Volunteers.put(Integer.parseInt(line[0]), new Volunteer(Integer.parseInt(line[0]), line[1], line[2], line[3], Boolean.parseBoolean(line[4])));
+            Volunteers.get(Integer.parseInt(line[0])).personalInfo = PersonalInfos.get(Integer.parseInt(line[5]));
+            PersonalInfos.get(Integer.parseInt(line[5])).volunteers.add(Volunteers.get(Integer.parseInt(line[0])));
         }
         in = new ArrayList<String>();
         in = Reader.Read("shifts");

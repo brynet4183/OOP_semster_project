@@ -12,6 +12,7 @@ public class Volunteer {
 
     public List<Shift> shifts;
     public List<Team> teams;
+    public PersonalInfo personalInfo;
 
     public Volunteer(int id, String name, String password, String salt, Boolean confrimed){
         this.id = id;
@@ -54,7 +55,7 @@ public class Volunteer {
     }
 
     public boolean login(String password) {
-        if(this.password == hash(password)){
+        if(this.password.equals(hash(password))){
             return true;
         } else {
             return false;

@@ -8,6 +8,7 @@ public class TeamAdmin {
     private String password;
     private String salt;
     public Team team;
+    public PersonalInfo personalInfo;
 
     public TeamAdmin(int id, String name, String password, String salt){
         this.id = id;
