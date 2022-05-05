@@ -29,7 +29,6 @@ public class FindVolunteerController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loggedInAsLabel.setText("Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName());
 
-        String[] volunteers = {"62514 OOP","62450 CDIO","02320 Dig Sys","01920 BM2"};
         searchField.textProperty().addListener(((observableValue, s, t1) -> {
             listView.getItems().clear();
             listView.getItems().addAll(context.Volunteers.values());
@@ -60,5 +59,12 @@ public class FindVolunteerController implements Initializable {
     }
     public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToFindVolunteer();
+    }
+
+    public void search(ActionEvent actionEvent) {
+        searchField.textProperty().addListener(((observableValue, s, t1) -> {
+            listView.getItems().clear();
+            listView.getItems().addAll(context.Volunteers.values());
+        }));
     }
 }
