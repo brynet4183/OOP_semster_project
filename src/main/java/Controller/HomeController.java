@@ -50,4 +50,10 @@ public class HomeController implements Initializable {
         app.goToLogin();
     }
 
+    public void goToConfirmVolunteer(ActionEvent actionEvent) {
+        app.goToConfirmVolunteer();
+    }
+    public void goToFindVolunteer(ActionEvent actionEvent) {
+        app.goToFindVolunteer();
+    }
 }

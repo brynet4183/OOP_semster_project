@@ -66,8 +66,8 @@
                         </GridPane.margin>
                     </Hyperlink>
                     <Hyperlink onAction="#goToProfile" text="Din Profil" underline="true" GridPane.rowIndex="9" />
-               <Hyperlink text="Frivilliggodkendelse" underline="true" GridPane.rowIndex="1" />
-               <Hyperlink text="Find Frivillig" underline="true" GridPane.rowIndex="2" />
+               <Hyperlink onAction="#goToConfirmVolunteer" text="Frivilliggodkendelse" underline="true" GridPane.rowIndex="1" />
+               <Hyperlink onAction="#goToFindVolunteer" text="Find Frivillig" underline="true" GridPane.rowIndex="2" />
                 </children>
                 <GridPane.margin>
                     <Insets left="5.0" />

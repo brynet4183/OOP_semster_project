@@ -22,14 +22,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         this.stage = stage;
         goToLogin();
         stage.show();
     }
 
     public void login() throws IOException {
-        //Delementer lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         if (loginType == 0) { //admin login
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolHomeView.fxml")); //TODO: change to admin view
             Scene scene = loader.load();
@@ -38,7 +38,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else if (loginType == 1){  //volunteer login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolHomeView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmHomeView.fxml"));
             Scene scene = loader.load();
             HomeController controller = loader.getController();
             controller.setParentController(this);
@@ -47,7 +47,7 @@ public class App extends Application {
     }
 
     public void goToRegister() throws IOException{
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/RegisterView.fxml"));
         Scene scene = loader.load();
         RegisterController controller = loader.getController();
@@ -56,7 +56,7 @@ public class App extends Application {
     }
 
     public void goToLogin() throws IOException {
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/LoginView.fxml"));
         Scene scene = loader.load();
         LoginController controller = loader.getController();
@@ -65,7 +65,7 @@ public class App extends Application {
     }
 
     public void goToWorkplaceOverview() throws IOException {
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplaceOverview.fxml"));
             Scene scene = loader.load();
@@ -82,7 +82,7 @@ public class App extends Application {
         }
     }
     public void goToAWorkplace(int workplace) throws IOException {//todo: implement picking workplace from parameter
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolAWorkplaceView.fxml"));
             Scene scene = loader.load();
@@ -100,9 +100,8 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
-
     public void goToProfile() throws IOException {
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolProfileView.fxml"));
             Scene scene = loader.load();
@@ -119,7 +118,7 @@ public class App extends Application {
         }
     }
     public void goToEditProfile() throws IOException {
-        //Lånt fra Christian Budtz' GitHub
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));
             Scene scene = loader.load();
@@ -135,5 +134,13 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
+    //Admin only methods
+    public void goToConfirmVolunteer() {
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
 
+    }
+    public void goToFindVolunteer() {
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
+
+    }
 }
