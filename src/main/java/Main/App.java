@@ -95,7 +95,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmAWorkplaceView.fxml\""));//todo: change to admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmAWorkplaceView.fxml"));//todo: change to admin
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
