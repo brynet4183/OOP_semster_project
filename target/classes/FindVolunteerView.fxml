@@ -133,6 +133,7 @@
                            <Insets right="5.0" />
                         </GridPane.margin>
                      </TextField>
+                     <Button mnemonicParsing="false" onAction="#search" text="Søg" GridPane.columnIndex="2" />
                         </children>
                     </GridPane>
                 </children>
