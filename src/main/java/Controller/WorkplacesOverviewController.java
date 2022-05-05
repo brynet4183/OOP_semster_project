@@ -16,12 +16,16 @@ import static Main.App.context;
 import static Main.App.loginID;
 
 public class WorkplacesOverviewController implements Initializable {
+
     @FXML
     private Label loggedInAsLabel;
 
     public Hyperlink workplace0;
     public Hyperlink workplace1;
     public Hyperlink workplace2;
+    public Hyperlink sbworkplace0;
+    public Hyperlink sbworkplace1;
+    public Hyperlink sbworkplace2;
     public Text leader0;
     public Text leader1;
     public Text leader2;
@@ -69,5 +73,13 @@ public class WorkplacesOverviewController implements Initializable {
     public void goToWorkplace2(ActionEvent actionEvent) throws IOException {
         app.goToAWorkplace(2);
     }
+
+    public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToConfirmVolunteer();
+    }
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToFindVolunteer();
+    }
+
 
 }
