@@ -31,7 +31,7 @@ public class App extends Application {
     public void login() throws IOException {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         if (loginType == 0) { //admin login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolHomeView.fxml")); //TODO: change to admin view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmHomeView.fxml"));
             Scene scene = loader.load();
             HomeController controller = loader.getController();
             controller.setParentController(this);
@@ -74,7 +74,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolWorkplaceOverview.fxml"));//todo: change to admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmWorkplaceOverview.fxml"));
             Scene scene = loader.load();
             WorkplacesOverviewController controller = loader.getController();
             controller.setParentController(this);
@@ -92,7 +92,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolAWorkplaceView.fxml\""));//todo: change to admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmAWorkplaceView.fxml\""));//todo: change to admin
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
@@ -110,7 +110,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolProfileView.fxml"));//todo: change to admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmProfileView.fxml"));
             Scene scene = loader.load();
             ProfileController controller = loader.getController();
             controller.setParentController(this);
@@ -136,9 +136,13 @@ public class App extends Application {
     }
 
     //Admin only methods
-    public void goToConfirmVolunteer() {
+    public void goToConfirmVolunteer() throws IOException {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
-
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ConfirmVolunteerView.fxml"));
+            Scene scene = loader.load();
+            ConfirmVolunteerController controller = loader.getController();
+            controller.setParentController(this);
+            stage.setScene(scene);
     }
     public void goToFindVolunteer() {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub

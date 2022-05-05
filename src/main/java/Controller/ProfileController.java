@@ -26,9 +26,6 @@ public class ProfileController implements Initializable {
     public Text street;
     public Text houseNo;
 
-    //View mode info text
-
-
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
@@ -53,7 +50,7 @@ public class ProfileController implements Initializable {
 
         }
         else {
-            name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
+            name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
             firstName.setText(context.TeamAdmins.get(loginID).personalInfo.getFirstName());
             lastName.setText(context.TeamAdmins.get(loginID).personalInfo.getLastName());
             language.setText(context.TeamAdmins.get(loginID).personalInfo.getLanguage());
@@ -84,12 +81,15 @@ public class ProfileController implements Initializable {
         app.goToLogin();
     }
 
+    //Adm only methods
+    public void goToConfirmVolunteers(ActionEvent actionEvent) throws IOException {app.goToConfirmVolunteer();}
+    public void goToFindVolunteer(ActionEvent actionEvent) {app.goToFindVolunteer();}
+
     //Edit profile
 
     public void goToEditProfile(ActionEvent actionEvent) throws IOException {
         app.goToEditProfile();
     }
-
 
 
 }

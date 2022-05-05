@@ -56,7 +56,7 @@ public class AWorkplaceController implements Initializable {
         app.goToLogin();
     }
 
-    public void goToConfirmVolunteer(ActionEvent actionEvent) {
+    public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToConfirmVolunteer();
     }
 
