@@ -1,12 +1,15 @@
 package Main;
 
 import Controller.*;
+import Models.Volunteer;
 import data.Context;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App extends Application {
     private Stage stage;
@@ -138,11 +141,11 @@ public class App extends Application {
     //Admin only methods
     public void goToConfirmVolunteer() throws IOException {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ConfirmVolunteerView.fxml"));
-            Scene scene = loader.load();
-            ConfirmVolunteerController controller = loader.getController();
-            controller.setParentController(this);
-            stage.setScene(scene);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ConfirmVolunteerView.fxml"));
+        Scene scene = loader.load();
+        ConfirmVolunteerController controller = loader.getController();
+        controller.setParentController(this);
+        stage.setScene(scene);
     }
     public void goToFindVolunteer() throws IOException {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
