@@ -144,8 +144,12 @@ public class App extends Application {
             controller.setParentController(this);
             stage.setScene(scene);
     }
-    public void goToFindVolunteer() {
+    public void goToFindVolunteer() throws IOException {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FindVolunteerView.fxml"));
+        Scene scene = loader.load();
+        FindVolunteerController controller = loader.getController();
+        controller.setParentController(this);
+        stage.setScene(scene);
     }
 }
