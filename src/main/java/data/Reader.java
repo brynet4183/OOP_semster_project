@@ -19,8 +19,11 @@ public class Reader {
             }
             File tableFile = new File(resource.toURI());
             Scanner myReader = new Scanner(tableFile);
+            int i = 0;
             while (myReader.hasNextLine()) {
                 list.add(myReader.nextLine());
+                System.out.println(list.get(i));
+                i++;
             }
             myReader.close();
         } catch (FileNotFoundException e) {
