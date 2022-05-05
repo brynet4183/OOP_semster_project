@@ -1,5 +1,5 @@
 package Controller;
-import javafx.application.Application;
+import Models.Volunteer;
 import Main.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -18,7 +18,7 @@ import static Main.App.loginID;
 
 public class FindVolunteerController implements Initializable {
     public Label loggedInAsLabel;
-    public ListView listView;
+    public ListView<String> listView;
     public TextField searchField;
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
@@ -31,7 +31,12 @@ public class FindVolunteerController implements Initializable {
 
         searchField.textProperty().addListener(((observableValue, s, t1) -> {
             listView.getItems().clear();
-            listView.getItems().addAll(context.Volunteers.values());
+            List<String> list = new ArrayList<>();
+            for (Volunteer v: context.Volunteers.selectVolunteer((x)-> x.personalInfo.getFirstName().contains(t1) || x.personalInfo.getLastName().contains(t1))) {
+                list.add(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+                System.out.println(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+            }
+            listView.getItems().addAll(list);
         }));
     }
 
@@ -64,7 +69,12 @@ public class FindVolunteerController implements Initializable {
     public void search(ActionEvent actionEvent) {
         searchField.textProperty().addListener(((observableValue, s, t1) -> {
             listView.getItems().clear();
-            listView.getItems().addAll(context.Volunteers.values());
+            List<String> list = new ArrayList<>();
+            for (Volunteer v: context.Volunteers.selectVolunteer((x)-> x.personalInfo.getFirstName().contains(t1) || x.personalInfo.getLastName().contains(t1))) {
+                list.add(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+                System.out.println(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+            }
+            listView.getItems().addAll(list);
         }));
     }
 }
