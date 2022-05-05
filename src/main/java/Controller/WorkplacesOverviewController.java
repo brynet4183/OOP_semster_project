@@ -90,7 +90,8 @@ public class WorkplacesOverviewController implements Initializable {
         Object node = actionEvent.getSource();
         Hyperlink b = (Hyperlink)node;
         try {
-            app.goToAWorkplace(Integer.parseInt(b.getId()));
+            System.out.println(Integer.parseInt(b.getId()));
+            app.goToAWorkplace(1);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
