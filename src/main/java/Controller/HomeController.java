@@ -1,6 +1,7 @@
 package Controller;
 
 import Main.App;
+import Models.Shift;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -8,6 +9,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static Main.App.context; //giver adgang til data
@@ -28,6 +30,13 @@ public class HomeController implements Initializable {
         String name = null;
         if (app.loginType == 1){
             name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+            List<Shift> sList = context.Volunteers.get(app.loginID).shifts;
+            for (Shift s: sList) {
+                Text startText = new Text(s.getStart());
+                Text endText = new Text(s.getEnd());
+                Text durText = new Text(s.getDuration());
+                Text teamText = new Text(s.team.getName());
+            }
         }
         else {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
@@ -53,7 +62,7 @@ public class HomeController implements Initializable {
     public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToConfirmVolunteer();
     }
-    public void goToFindVolunteer(ActionEvent actionEvent) {
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToFindVolunteer();
     }
 }

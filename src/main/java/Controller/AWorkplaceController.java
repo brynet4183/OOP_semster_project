@@ -1,13 +1,17 @@
 package Controller;
 
 import Main.App;
+import Models.Shift;
+import Models.Volunteer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static Main.App.context;
@@ -36,7 +40,17 @@ public class AWorkplaceController implements Initializable {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
         }
         loggedInAsLabel.setText(name);
-
+        List<Volunteer> vList = context.Teams.get(app.workPlace).volunteers;
+        for (Volunteer v: vList) {
+            Text nameText = new Text(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+        }
+        List<Shift> sList = context.Teams.get(app.workPlace).shifts;
+        for (Shift s: sList) {
+            Text startText = new Text(s.getStart());
+            Text endText = new Text(s.getEnd());
+            Text durText = new Text(s.getDuration());
+            Text volText = new Text(s.volunteer.personalInfo.getFirstName());
+        }
         //todo: init workplace fields
     }
 
@@ -60,7 +74,7 @@ public class AWorkplaceController implements Initializable {
         app.goToConfirmVolunteer();
     }
 
-    public void goToFindVolunteer(ActionEvent actionEvent) {
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToFindVolunteer();
     }
 
