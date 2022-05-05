@@ -133,4 +133,7 @@ public class EditProfileController implements Initializable {
     public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToFindVolunteer();
     }
+
+    public void goToAWorkplace(ActionEvent actionEvent) {
+    }
 }
