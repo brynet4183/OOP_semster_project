@@ -14,8 +14,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import static Main.App.context;
-import static Main.App.loginID;
+import static Main.App.*;
 
 public class AWorkplaceController implements Initializable {
 
@@ -33,18 +32,18 @@ public class AWorkplaceController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Init WorkplaceOverviewCtrl");
         String name = null;
-        if (app.loginType == 1){
-            name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+        if (loginType == 1){
+            name = context.Volunteers.selectVolunteer((x)->x.getId()==loginID).get(0).getName();
         }
         else {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
         }
         loggedInAsLabel.setText(name);
-        List<Volunteer> vList = context.Teams.get(app.workPlace).volunteers;
+        List<Volunteer> vList = context.Teams.get(workPlace).volunteers;
         for (Volunteer v: vList) {
             Text nameText = new Text(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
         }
-        List<Shift> sList = context.Teams.get(app.workPlace).shifts;
+        List<Shift> sList = context.Teams.get(workPlace).shifts;
         for (Shift s: sList) {
             Text startText = new Text(s.getStart());
             Text endText = new Text(s.getEnd());

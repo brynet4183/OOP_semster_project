@@ -86,12 +86,12 @@ public class App extends Application {
     }
     public void goToAWorkplace(int workplace) throws IOException {//todo: implement picking workplace from parameter
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
+        workPlace = workplace;
         if (loginType == 1) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolAWorkplaceView.fxml"));
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
-            workPlace = workplace;
             stage.setScene(scene);
         }
         else{
@@ -99,7 +99,6 @@ public class App extends Application {
             Scene scene = loader.load();
             AWorkplaceController controller = loader.getController();
             controller.setParentController(this);
-            workPlace = workplace;
             stage.setScene(scene);
         }
     }
