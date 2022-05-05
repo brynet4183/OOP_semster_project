@@ -8,18 +8,18 @@ public class Volunteer implements Model{
     private String name;
     private String password;
     private String salt;
-    private Boolean confrimed;
+    private Boolean confirmed;
 
     public List<Shift> shifts;
     public List<Team> teams;
     public PersonalInfo personalInfo;
 
-    public Volunteer(int id, String name, String password, String salt, Boolean confrimed){
+    public Volunteer(int id, String name, String password, String salt, Boolean confirmed){
         this.id = id;
         this.name = name;
         this.password = password;
         this.salt = salt;
-        this.confrimed = confrimed;
+        this.confirmed = confirmed;
         teams = new ArrayList<>();
         shifts = new ArrayList<>();
     }
@@ -29,7 +29,7 @@ public class Volunteer implements Model{
     }
 
     public Boolean getConfirmed() {
-        return confrimed;
+        return confirmed;
     }
 
     public String getName() {
@@ -42,8 +42,8 @@ public class Volunteer implements Model{
         return salt;
     }
 
-    public void confrim() {
-        this.confrimed = true;
+    public void confirm() {
+        this.confirmed = true;
     }
 
     public void setName(String name) {
