@@ -12,6 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
+import javafx.scene.control.Label;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -19,13 +20,15 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import static Main.App.context; //giver adgang til data
 
+import static Main.App.context;
+import static Main.App.loginID;
 
 public class ConfirmVolunteerController implements Initializable {
 
     public GridPane mainGrid;
 
+    public Label loggedInAsLabel;
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
@@ -33,6 +36,7 @@ public class ConfirmVolunteerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        loggedInAsLabel.setText("Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName());
 
         List<Volunteer> vList = context.Volunteers.selectVolunteer((x) -> !x.getConfirmed());
         int i = 1;

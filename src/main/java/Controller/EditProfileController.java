@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -25,6 +26,10 @@ public class EditProfileController implements Initializable {
     public TextField cityField;
     public TextField streetField;
     public TextField houseNoField;
+    public TextField passField1;
+    public TextField passField2;
+    public Text passStatusLabel;
+
 
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
@@ -48,7 +53,6 @@ public class EditProfileController implements Initializable {
             cityField.setText(context.Volunteers.get(loginID).personalInfo.getCity());
             streetField.setText(context.Volunteers.get(loginID).personalInfo.getStreet());
             houseNoField.setText(context.Volunteers.get(loginID).personalInfo.getNumber());
-
         }
         else {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
@@ -92,8 +96,21 @@ public class EditProfileController implements Initializable {
             context.TeamAdmins.get(loginID).personalInfo.setStreet(streetField.getText());
             context.TeamAdmins.get(loginID).personalInfo.setNumber(houseNoField.getText());
         }
-        context.Save();
-        app.goToProfile();
+        if (passField1.getText()=="" && passField2.getText()==""){
+            context.Save();
+            app.goToProfile();
+        }
+        else{
+            if (passField1.getText().equals(passField2.getText())){
+                if (loginType==0){context.TeamAdmins.get(loginID).setPassword(passField1.getText());}
+                else {context.Volunteers.get(loginID).setPassword(passField1.getText());}
+                context.Save();
+                app.goToProfile();
+            }
+            else{
+                passStatusLabel.setText("Adgangskoderne skal være ens!");
+            }
+        }
     }
     //GoTo Block:
     public void goToHome(ActionEvent actionEvent) throws IOException {
@@ -110,4 +127,10 @@ public class EditProfileController implements Initializable {
     }
 
 
+    public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToConfirmVolunteer();
+    }
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToFindVolunteer();
+    }
 }

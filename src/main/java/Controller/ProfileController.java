@@ -50,7 +50,7 @@ public class ProfileController implements Initializable {
 
         }
         else {
-            name = context.TeamAdmins.selectTeamAdmin((x)->x.getId()==app.loginID).get(0).getName();
+            name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
             firstName.setText(context.TeamAdmins.get(loginID).personalInfo.getFirstName());
             lastName.setText(context.TeamAdmins.get(loginID).personalInfo.getLastName());
             language.setText(context.TeamAdmins.get(loginID).personalInfo.getLanguage());

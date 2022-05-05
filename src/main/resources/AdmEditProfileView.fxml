@@ -58,7 +58,7 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="1">
+                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="3">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
@@ -69,6 +69,8 @@
                         </GridPane.margin>
                     </Hyperlink>
                     <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
+               <Hyperlink onAction="#goToConfirmVolunteer" text="Frivilliggodkendelse" underline="true" GridPane.rowIndex="1" />
+               <Hyperlink onAction="#goToFindVolunteer" text="Find Frivillig" underline="true" GridPane.rowIndex="2" />
                 </children>
                 <GridPane.margin>
                     <Insets left="5.0" />
@@ -107,7 +109,7 @@
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -117,7 +119,7 @@
                             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         </rowConstraints>
                         <GridPane.margin>
@@ -131,59 +133,67 @@
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tlf. nr.:" GridPane.rowIndex="4" />
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse:" GridPane.rowIndex="5" />
                             <Button mnemonicParsing="false" onAction="#saveProfileChanges" text="Gem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
-                        <GridPane.margin>
-                           <Insets right="5.0" />
-                        </GridPane.margin></Button>
-                     <Button mnemonicParsing="false" onAction="#goToProfile" text="Tilbage" GridPane.columnIndex="2" GridPane.rowIndex="8">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin>
-                     </Button>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
-                        <GridPane.margin>
-                           <Insets right="5.0" />
-                        </GridPane.margin>
-                     </Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By:" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
-                        <GridPane.margin>
-                           <Insets right="5.0" />
-                        </GridPane.margin>
-                     </Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gade:" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
-                        <GridPane.margin>
-                           <Insets right="5.0" />
-                        </GridPane.margin>
-                     </Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HusNr:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
-                        <GridPane.margin>
-                           <Insets right="5.0" />
-                        </GridPane.margin>
-                     </Text>
-                     <TextField fx:id="streetField" prefHeight="25.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                     <TextField fx:id="zipField" GridPane.columnIndex="3" GridPane.rowIndex="5">
-                        <GridPane.margin>
-                           <Insets right="30.0" />
-                        </GridPane.margin>
-                     </TextField>
-                     <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                     <TextField fx:id="houseNoField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PostNr.:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
-                        <GridPane.margin>
-                           <Insets left="5.0" right="5.0" />
-                        </GridPane.margin>
-                     </Text>
-                     <TextField fx:id="firstNameField" text="name" GridPane.columnIndex="1" />
-                     <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                     <TextField fx:id="languageField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                     <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                     <TextField fx:id="phoneNoField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                     <TextField fx:id="countryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <GridPane.margin>
+                                    <Insets right="5.0" />
+                                </GridPane.margin></Button>
+                            <Button mnemonicParsing="false" onAction="#goToProfile" text="Tilbage" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                <GridPane.margin>
+                                    <Insets left="5.0" />
+                                </GridPane.margin>
+                            </Button>
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                <GridPane.margin>
+                                    <Insets right="5.0" />
+                                </GridPane.margin>
+                            </Text>
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By:" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                <GridPane.margin>
+                                    <Insets right="5.0" />
+                                </GridPane.margin>
+                            </Text>
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gade:" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                <GridPane.margin>
+                                    <Insets right="5.0" />
+                                </GridPane.margin>
+                            </Text>
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HusNr:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                <GridPane.margin>
+                                    <Insets right="5.0" />
+                                </GridPane.margin>
+                            </Text>
+                            <TextField fx:id="streetField" prefHeight="25.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                            <TextField fx:id="zipField" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                <GridPane.margin>
+                                    <Insets right="30.0" />
+                                </GridPane.margin>
+                            </TextField>
+                            <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                            <TextField fx:id="houseNoField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PostNr.:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                </GridPane.margin>
+                            </Text>
+                            <TextField fx:id="firstNameField" GridPane.columnIndex="1" />
+                            <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <TextField fx:id="languageField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <TextField fx:id="phoneNoField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                            <TextField fx:id="countryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Skift Adgangskode:" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ny Kode:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gentag Ny Kode:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ny Kode:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets right="5.0" />
+                        </GridPane.margin>
+                     </Text>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gentag Kode:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                           <Insets right="5.0" />
+                        </GridPane.margin>
+                     </Text>
                      <Text fx:id="passStatusLabel" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                     <PasswordField fx:id="passField2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                      <PasswordField fx:id="passField1" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     <PasswordField fx:id="passField2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                         </children>
                     </GridPane>
                 </children>
