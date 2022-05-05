@@ -56,4 +56,21 @@ public class AWorkplaceController implements Initializable {
         app.goToLogin();
     }
 
+    public void goToConfirmVolunteer(ActionEvent actionEvent) {
+        app.goToConfirmVolunteer();
+    }
+
+    public void goToFindVolunteer(ActionEvent actionEvent) {
+        app.goToFindVolunteer();
+    }
+
+    public void goToWorkplace0(ActionEvent actionEvent) throws IOException {
+        app.goToAWorkplace(0);
+    }
+    public void goToWorkplace1(ActionEvent actionEvent) throws IOException {
+        app.goToAWorkplace(1);
+    }
+    public void goToWorkplace2(ActionEvent actionEvent) throws IOException {
+        app.goToAWorkplace(2);
+    }
 }

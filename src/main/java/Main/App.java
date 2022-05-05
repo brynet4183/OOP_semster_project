@@ -134,6 +134,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
     }
+
     //Admin only methods
     public void goToConfirmVolunteer() {
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
