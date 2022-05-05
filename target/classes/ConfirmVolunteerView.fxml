@@ -76,7 +76,7 @@
             </GridPane>
             <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" />
                 </columnConstraints>
                 <rowConstraints>
                     <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
@@ -104,14 +104,7 @@
                     </GridPane>
                     <GridPane GridPane.rowIndex="1">
                         <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="60.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
-                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" />
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -128,41 +121,115 @@
                             <Insets />
                         </GridPane.margin>
                         <children>
-                            <Text fx:id="firstName" strokeType="OUTSIDE" strokeWidth="0.0" text="Navn:" GridPane.columnIndex="1">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin></Text>
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
                         <GridPane.margin>
                            <Insets />
                         </GridPane.margin></Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modersmål:" GridPane.columnIndex="2">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin></Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" GridPane.columnIndex="3">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin></Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tlf:" GridPane.columnIndex="4">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin></Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" GridPane.columnIndex="5">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin></Text>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="44558899" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin>
-                     </Text>
-                     <Button mnemonicParsing="false" text="Godkend" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By:" GridPane.columnIndex="6">
-                        <GridPane.margin>
-                           <Insets left="5.0" />
-                        </GridPane.margin>
-                     </Text>
+                     <GridPane>
+                        <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="125.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="60.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" prefWidth="20.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                           <Text fx:id="firstName" strokeType="OUTSIDE" strokeWidth="0.0" text="Navn:" GridPane.columnIndex="1">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+                              <GridPane.margin>
+                                 <Insets />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modersmål:" GridPane.columnIndex="2">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" GridPane.columnIndex="3">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tlf:" GridPane.columnIndex="4">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" GridPane.columnIndex="5">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By:" GridPane.columnIndex="6">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                        </children>
+                     </GridPane>
+                     <GridPane fx:id="volinfoRow" GridPane.rowIndex="1">
+                        <columnConstraints>
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="25.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="125.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="65.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" prefWidth="20.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                           <Text fx:id="firstName1" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" GridPane.columnIndex="1">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+                              <GridPane.margin>
+                                 <Insets />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LANGUAGE" GridPane.columnIndex="2">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EMAIL" GridPane.columnIndex="3">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="00000000" GridPane.columnIndex="4">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="COUNTRY" GridPane.columnIndex="5">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CITY" GridPane.columnIndex="6">
+                              <GridPane.margin>
+                                 <Insets left="5.0" />
+                              </GridPane.margin>
+                           </Text>
+                           <Button mnemonicParsing="false" onAction="#confirmVolunteer" text="Godkend" GridPane.columnIndex="7" />
+                        </children>
+                     </GridPane>
                         </children>
                     </GridPane>
                 </children>
