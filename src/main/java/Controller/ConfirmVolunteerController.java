@@ -134,7 +134,7 @@ public class ConfirmVolunteerController implements Initializable {
     public void confirmVolunteer(ActionEvent actionEvent) {
         Object node = actionEvent.getSource();
         Button b = (Button)node;
-        context.Volunteers.get(Integer.parseInt(b.getId())).confrim();
+        context.Volunteers.get(Integer.parseInt(b.getId())).confirm();
         context.Save();
         try {
             app.goToConfirmVolunteer();
