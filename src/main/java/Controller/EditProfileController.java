@@ -31,6 +31,7 @@ public class EditProfileController implements Initializable {
     public Text passStatusLabel;
 
 
+
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
@@ -134,6 +135,4 @@ public class EditProfileController implements Initializable {
         app.goToFindVolunteer();
     }
 
-    public void goToAWorkplace(ActionEvent actionEvent) {
-    }
 }
