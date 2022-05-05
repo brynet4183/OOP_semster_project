@@ -51,6 +51,11 @@ public class DataMap<K extends Integer, V extends Model> extends HashMap<K, V> {
         v.setId(id);
         this.put((K)id, v);
     }
+    public int lastId(){
+        int l = this.keySet().toArray().length;
+        Object lastId = this.keySet().toArray()[l-1];
+        return ((Integer)lastId);
+    }
 
     public interface WhereTeam {
         Boolean run(Team model);

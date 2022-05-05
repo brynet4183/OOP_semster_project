@@ -41,12 +41,13 @@ public class LoginController{
             }
             else if (loginRadioVolunteer.isSelected()){
                 List<Volunteer> vList = context.Volunteers.selectVolunteer((x) -> x.getName().equals(loginIDField.getText()));
-                if(!vList.isEmpty() && vList.get(0).login(loginPasswordField.getText())){
+                if(!vList.isEmpty() && vList.get(0).login(loginPasswordField.getText()) && vList.get(0).getConfirmed()){
                     app.loginID = vList.get(0).getId();
                     app.loginType = 1;
                     app.login();
                     return;
                 }
+                else {loginStatusLabel.setText("Du er ikke godkendt");}
             }
             loginStatusLabel.setText("Forkert ID eller password");
             loginStatusLabel.setTextFill(Color.RED);

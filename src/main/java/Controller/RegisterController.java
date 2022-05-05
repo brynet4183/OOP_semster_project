@@ -1,6 +1,8 @@
 package Controller;
 
 import Main.App;
+import Models.PersonalInfo;
+import Models.Volunteer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -30,10 +32,17 @@ public class RegisterController {
     public void handleRegistration(ActionEvent actionEvent) {
     //Todo: lav en metode her lol
         if (allFieldsFilled()){
-
-
+            PersonalInfo pi = new PersonalInfo(0, registerFirstnameField.getText(),registerLastnameField.getText(),registerLanguageField.getText(),registerEmailField.getText(),
+                    registerPhonenoField.getText(),registerCountryField.getText(),Integer.parseInt(registerZipField.getText()),registerCityField.getText(),registerStreetField.getText(),registerNoField.getText());
+            int volId = context.Volunteers.lastId()+1;
+            Volunteer vol = new Volunteer(0,Integer.toString(volId),null,null,false);
+            vol.setPassword("pass" + volId);
+            context.PersonalInfos.insert(pi);
+            vol.personalInfo = pi;
+            context.Volunteers.insert(vol);
             registerStatusLabel.setText("Du er nu registreret"); //ToDo: det her skal kun dukke op upon conf
             registerStatusLabel.setTextFill(Color.GREEN);
+            context.Save();
         }
         else{
             registerStatusLabel.setText("Du mangler at udfylde et eller flere felter");
