@@ -53,7 +53,7 @@ public class HomeController implements Initializable {
     public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToConfirmVolunteer();
     }
-    public void goToFindVolunteer(ActionEvent actionEvent) {
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToFindVolunteer();
     }
 }

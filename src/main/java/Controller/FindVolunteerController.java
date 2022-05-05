@@ -1,14 +1,16 @@
 package Controller;
-
+import javafx.application.Application;
 import Main.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static Main.App.context;
@@ -27,7 +29,14 @@ public class FindVolunteerController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loggedInAsLabel.setText("Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName());
 
+        String[] volunteers = {"62514 OOP","62450 CDIO","02320 Dig Sys","01920 BM2"};
+        searchField.textProperty().addListener(((observableValue, s, t1) -> {
+            listView.getItems().clear();
+            listView.getItems().addAll(context.Volunteers.values());
+        }));
     }
+
+
 
 
 

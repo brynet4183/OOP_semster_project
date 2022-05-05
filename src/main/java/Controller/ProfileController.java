@@ -82,8 +82,10 @@ public class ProfileController implements Initializable {
     }
 
     //Adm only methods
-    public void goToConfirmVolunteers(ActionEvent actionEvent) throws IOException {app.goToConfirmVolunteer();}
-    public void goToFindVolunteer(ActionEvent actionEvent) {app.goToFindVolunteer();}
+    public void goToConfirmVolunteers(ActionEvent actionEvent) throws IOException {
+        app.goToConfirmVolunteer();}
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToFindVolunteer();}
 
     //Edit profile
 

@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -126,9 +127,8 @@
                             <Insets />
                         </GridPane.margin>
                         <children>
-                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Søg:" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
                      <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="3" GridPane.rowSpan="6" />
-                     <TextField fx:id="searchField" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <TextField fx:id="searchField" promptText="Søg efter..." GridPane.columnSpan="2">
                         <GridPane.margin>
                            <Insets right="5.0" />
                         </GridPane.margin>

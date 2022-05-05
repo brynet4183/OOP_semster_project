@@ -60,7 +60,7 @@ public class AWorkplaceController implements Initializable {
         app.goToConfirmVolunteer();
     }
 
-    public void goToFindVolunteer(ActionEvent actionEvent) {
+    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
         app.goToFindVolunteer();
     }
 
