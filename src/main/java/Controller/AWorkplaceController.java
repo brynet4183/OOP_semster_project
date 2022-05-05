@@ -86,4 +86,8 @@ public class AWorkplaceController implements Initializable {
     public void goToWorkplace2(ActionEvent actionEvent) throws IOException {
         app.goToAWorkplace(2);
     }
+
+    public void goToEditSchedule(ActionEvent actionEvent) throws IOException{
+        app.goToEditSchedule();//Todo: pass workplace
+    }
 }

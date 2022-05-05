@@ -154,4 +154,8 @@ public class App extends Application {
         controller.setParentController(this);
         stage.setScene(scene);
     }
+
+    public void goToEditSchedule() throws IOException{
+
+    }
 }
