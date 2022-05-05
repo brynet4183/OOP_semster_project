@@ -38,7 +38,7 @@
                     <Font size="36.0" />
                 </font>
             </Text>
-            <GridPane GridPane.rowIndex="2">
+            <GridPane fx:id="navGrid" GridPane.rowIndex="2">
                 <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 </columnConstraints>
@@ -66,21 +66,6 @@
                         </GridPane.margin>
                     </Hyperlink>
                     <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
-               <Hyperlink fx:id="sbworkplace0" onAction="#goToWorkplace0" text="Hyperlink" underline="true" GridPane.rowIndex="2">
-                  <GridPane.margin>
-                     <Insets left="20.0" />
-                  </GridPane.margin>
-               </Hyperlink>
-               <Hyperlink fx:id="sbworkplace1" onAction="#goToWorkplace1" text="Hyperlink" underline="true" GridPane.rowIndex="3">
-                  <GridPane.margin>
-                     <Insets left="20.0" />
-                  </GridPane.margin>
-               </Hyperlink>
-               <Hyperlink fx:id="sbworkplace2" onAction="#goToWorkplace2" text="Hyperlink" underline="true" GridPane.rowIndex="4">
-                  <GridPane.margin>
-                     <Insets left="20.0" />
-                  </GridPane.margin>
-               </Hyperlink>
                 </children>
                 <GridPane.margin>
                     <Insets left="5.0" />
@@ -114,7 +99,7 @@
                             <Insets />
                         </GridPane.margin>
                     </GridPane>
-               <GridPane GridPane.rowIndex="1">
+               <GridPane fx:id="mainGrid" GridPane.rowIndex="1">
                  <columnConstraints>
                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
@@ -132,13 +117,7 @@
                      <Insets />
                   </GridPane.margin>
                   <children>
-                     <Hyperlink fx:id="workplace0" onAction="#goToWorkplace0" text="Hyperlink" underline="true" GridPane.rowIndex="1" />
-                     <Hyperlink fx:id="workplace1" onAction="#goToWorkplace1" text="Hyperlink" underline="true" GridPane.rowIndex="2" />
-                     <Hyperlink fx:id="workplace2" onAction="#goToWorkplace2" text="Hyperlink" underline="true" GridPane.rowIndex="3" />
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Leder:" GridPane.columnIndex="1" />
-                     <Text fx:id="leader0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                     <Text fx:id="leader1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                     <Text fx:id="leader2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arbejdsplads:" />
                   </children>
                </GridPane>
