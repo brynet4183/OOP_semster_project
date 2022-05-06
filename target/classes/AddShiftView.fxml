@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Scene?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -12,7 +13,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.ComboBox?>
 <Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditScheduleController">
     <GridPane gridLinesVisible="true" minHeight="400.0" minWidth="600.0">
         <columnConstraints>
@@ -31,7 +31,7 @@
                     <Insets right="10.0" />
                 </padding>
             </Label>
-            <Label fx:id="loggedInAsLabel" text="VOLUNTEER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+            <Label fx:id="loggedInAsLabel" text="ADMIN" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                 <GridPane.margin>
                     <Insets right="10.0" />
                 </GridPane.margin>
@@ -110,6 +110,7 @@
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="125.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="125.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="125.0" />
+                     <ColumnConstraints />
                         </columnConstraints>
                         <rowConstraints>
                             <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -127,34 +128,34 @@
                             <Insets />
                         </GridPane.margin>
                         <children>
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vagter:"  GridPane.columnSpan="4" GridPane.halignment="CENTER" />
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vagter:" GridPane.columnSpan="4" GridPane.halignment="CENTER" />
                             <Button mnemonicParsing="false" onAction="#goToAWorkplace" text="Tilbage" GridPane.columnIndex="4" GridPane.rowIndex="8">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </Button>
                             <Text fx:id="passStatusLabel" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                            <Text text="Frivillig" layoutX="15.0" layoutY="33.0" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                            <Text layoutX="15.0" layoutY="33.0" text="Frivillig" GridPane.columnIndex="0" GridPane.rowIndex="8">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </Text>
-                            <ComboBox fx:id="volunteers" layoutX="15.0" layoutY="33.0" prefWidth="90.0" GridPane.columnIndex="0" GridPane.rowIndex="9" promptText="choose">
+                            <ComboBox fx:id="volunteers" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose" GridPane.columnIndex="0" GridPane.rowIndex="9">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </ComboBox>
-                            <Text text="dag" layoutX="15.0" layoutY="33.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <Text layoutX="15.0" layoutY="33.0" text="dag" GridPane.columnIndex="1" GridPane.rowIndex="8">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </Text>
-                            <ComboBox fx:id="dates" layoutX="15.0" layoutY="33.0" prefWidth="90.0" GridPane.columnIndex="1" GridPane.rowIndex="9" promptText="choose">
+                            <ComboBox fx:id="dates" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </ComboBox>
-                            <Text text="start tid" layoutX="15.0" layoutY="33.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                            <Text layoutX="15.0" layoutY="33.0" text="start tid" GridPane.columnIndex="2" GridPane.rowIndex="8">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
@@ -164,7 +165,7 @@
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </TextField>
-                            <Text text="varighed" layoutX="15.0" layoutY="33.0" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                            <Text layoutX="15.0" layoutY="33.0" text="varighed" GridPane.columnIndex="3" GridPane.rowIndex="8">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
@@ -174,7 +175,7 @@
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </TextField>
-                            <Button mnemonicParsing="false" text="Tilføj" minWidth="65" onAction="#addShift" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                            <Button minWidth="65" mnemonicParsing="false" onAction="#addShift" text="Tilføj" GridPane.columnIndex="4" GridPane.rowIndex="9">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>

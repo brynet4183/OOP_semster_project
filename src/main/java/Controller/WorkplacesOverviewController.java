@@ -31,7 +31,7 @@ public class WorkplacesOverviewController extends Controller {
         String name = null;
         List<Team> tList = new ArrayList<>();
         if (loginType == 1){
-            name = context.Volunteers.selectVolunteer((x)->x.getId()==loginID).get(0).getName();
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
             tList = context.Volunteers.get(loginID).teams;
         }
         else {

@@ -26,7 +26,7 @@ public class HomeController extends Controller{
         System.out.println("Init Homectrl");
         String name = null;
         if (app.loginType == 1){
-            name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
             List<Shift> sList = context.Volunteers.get(app.loginID).shifts;
             int i = 1;
             for (Shift s: sList) {

@@ -30,7 +30,7 @@ public class ProfileController extends Controller {
         System.out.println("Init Profilectrl");
         String name = null;
         if (app.loginType == 1){
-            name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
             firstName.setText(context.Volunteers.get(loginID).personalInfo.getFirstName());
             lastName.setText(context.Volunteers.get(loginID).personalInfo.getLastName());
             language.setText(context.Volunteers.get(loginID).personalInfo.getLanguage());

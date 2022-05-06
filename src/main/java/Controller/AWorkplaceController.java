@@ -32,7 +32,7 @@ public class AWorkplaceController extends Controller {
         System.out.println("Init WorkplaceOverviewCtrl");
         String name = null;
         if (loginType == 1){
-            name = context.Volunteers.selectVolunteer((x)->x.getId()==loginID).get(0).getName();
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
         }
         else {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();

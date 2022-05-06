@@ -35,8 +35,7 @@ public class EditProfileController extends Controller {
         System.out.println("Init Profilectrl");
         String name = null;
         if (loginType == 1){
-            //name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
-            name = context.Volunteers.get(loginID).getName();
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
             firstNameField.setText(context.Volunteers.get(loginID).personalInfo.getFirstName());
             lastNameField.setText(context.Volunteers.get(loginID).personalInfo.getLastName());
             languageField.setText(context.Volunteers.get(loginID).personalInfo.getLanguage());
