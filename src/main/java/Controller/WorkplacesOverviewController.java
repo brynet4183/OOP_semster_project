@@ -66,8 +66,7 @@ public class WorkplacesOverviewController extends Controller {
         Object node = actionEvent.getSource();
         Hyperlink b = (Hyperlink)node;
         try {
-            System.out.println(Integer.parseInt(b.getId()));
-            app.goToAWorkplace(1);
+            app.goToAWorkplace(Integer.parseInt(b.getId()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
