@@ -40,29 +40,21 @@
           <RowConstraints minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Password:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                  <GridPane.margin>
-                     <Insets left="10.0" />
-                  </GridPane.margin>
-            </Label>
-            <Label text="Bruger-ID:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                  <GridPane.margin>
-                     <Insets left="10.0" />
-                  </GridPane.margin>
-            </Label>
-            <PasswordField fx:id="loginPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                  <GridPane.margin>
-                     <Insets />
-                  </GridPane.margin></PasswordField>
-            <TextField fx:id="loginIDField" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                  <GridPane.margin>
-                     <Insets />
-                  </GridPane.margin></TextField>
                <Label text="Log ind som:">
                   <GridPane.margin>
                      <Insets left="10.0" />
                   </GridPane.margin>
                </Label>
+            <Label text="Bruger-ID:" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets left="10.0" />
+                  </GridPane.margin>
+            </Label>
+            <Label text="Password:" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets left="10.0" />
+                  </GridPane.margin>
+            </Label>
                <RadioButton fx:id="loginRadioVolunteer" mnemonicParsing="false" selected="true" text="Frivillig" GridPane.columnIndex="1">
                   <toggleGroup>
                      <ToggleGroup fx:id="loginRadio" />
@@ -76,6 +68,15 @@
                      <Insets right="5.0" />
                   </GridPane.margin>
                </RadioButton>
+            <TextField fx:id="loginIDField" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets />
+                  </GridPane.margin>
+               </TextField>
+            <PasswordField fx:id="loginPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <GridPane.margin>
+                     <Insets />
+                  </GridPane.margin></PasswordField>
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -90,6 +91,7 @@
       <Button mnemonicParsing="false" onAction="#handleRegisterBtnClick" text="Registrér dig" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
          <Label fx:id="loginStatusLabel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Benedicte &amp; Johnny Inc." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+         <Text fill="#ffad30" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskilde Festival Frivilligsystem" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
    </children>
       <opaqueInsets>
          <Insets />

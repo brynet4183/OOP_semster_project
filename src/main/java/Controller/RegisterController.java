@@ -1,20 +1,25 @@
+//Polished. Has todo
 package Controller;
 
 import Main.App;
 import Models.PersonalInfo;
 import Models.Volunteer;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+
 import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
-import static Main.App.context; //giver adgang til data
+import static Main.App.context;
 
-public class RegisterController {
+public class RegisterController implements Initializable {
     public Label registerStatusLabel;
-
     public TextField registerFirstnameField;
     public TextField registerLastnameField;
     public TextField registerEmailField;
@@ -25,26 +30,48 @@ public class RegisterController {
     public TextField registerNoField;
     public TextField registerCountryField;
     public TextField registerPhonenoField;
+    //LoginInfo for registrant
+    public Text loginInfoTitle;
+    public Text loginIDTitle;
+    public Text loginPassTitle;
+    public Label loginIDInfo;
+    public Label loginPassInfo;
 
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
     private App app;
     public void setParentController(App app) {this.app = app;}
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        loginInfoTitle.setText("");
+        loginIDTitle.setText("");
+        loginPassTitle.setText("");
+        loginIDInfo.setText("");
+        loginPassInfo.setText("");
+    }
+
     public void handleRegistration(ActionEvent actionEvent) {
-    //Todo: lav en metode her lol
         if (allFieldsFilled()){
-            PersonalInfo pi = new PersonalInfo(0, registerFirstnameField.getText(),registerLastnameField.getText(),registerLanguageField.getText(),registerEmailField.getText(),
-                    registerPhonenoField.getText(),registerCountryField.getText(),Integer.parseInt(registerZipField.getText()),registerCityField.getText(),registerStreetField.getText(),registerNoField.getText());
+            PersonalInfo pi = new PersonalInfo(0,registerFirstnameField.getText(),
+                    registerLastnameField.getText(),registerLanguageField.getText(),
+                    registerEmailField.getText(),   registerPhonenoField.getText(),
+                    registerCountryField.getText(), Integer.parseInt(registerZipField.getText()),
+                    registerCityField.getText(),    registerStreetField.getText(), registerNoField.getText());
             int volId = context.Volunteers.lastId()+1;
             Volunteer vol = new Volunteer(0,Integer.toString(volId),null,null,false);
             vol.setPassword("pass" + volId);
             context.PersonalInfos.insert(pi);
             vol.personalInfo = pi;
             context.Volunteers.insert(vol);
-            registerStatusLabel.setText("Du er nu registreret"); //ToDo: det her skal kun dukke op upon conf
+            registerStatusLabel.setText("Du er nu registreret. Afvent godkendelse fra en administrator."); //todo() er der en måde det her kan confirmes på?
             registerStatusLabel.setTextFill(Color.GREEN);
             context.Save();
+            loginInfoTitle.setText("Dine Loginoplysninger:");
+            loginIDTitle.setText("Login-ID:");
+            loginPassTitle.setText("Password:");
+            loginIDInfo.setText(Integer.toString(context.Volunteers.get(volId).getId()));
+            loginPassInfo.setText("pass" + (context.Volunteers.lastId()));
         }
         else{
             registerStatusLabel.setText("Du mangler at udfylde et eller flere felter");
@@ -53,9 +80,11 @@ public class RegisterController {
 
     }
 
+
     public void handleBackClicked(ActionEvent actionEvent) throws IOException {
-            app.goToLogin();
+        app.goToLogin();
     }
+
     public boolean allFieldsFilled(){
         if(!Objects.equals(registerFirstnameField.getText(), "") &&
                 !Objects.equals(registerLastnameField.getText(), "") &&
@@ -68,10 +97,8 @@ public class RegisterController {
                 !Objects.equals(registerCountryField.getText(), "") &&
                 !Objects.equals(registerPhonenoField.getText(), "")) {
             return true;}
-            else {return false;}
+        else {return false;}
     }
-    public void saveData(){
 
-    }
 
 }
