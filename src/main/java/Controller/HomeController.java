@@ -1,14 +1,9 @@
+//Polished
 package Controller;
 
-import Main.App;
 import Models.Shift;
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -26,7 +21,8 @@ public class HomeController extends Controller{
         System.out.println("Init Homectrl");
         String name = null;
         if (app.loginType == 1){
-            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " +
+                    context.Volunteers.get(loginID).personalInfo.getLastName());
             List<Shift> sList = context.Volunteers.get(app.loginID).shifts;
             int i = 1;
             for (Shift s: sList) {

@@ -27,11 +27,11 @@
         </rowConstraints>
         <children>
             <Label text="Logget ind som:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                <padding>
-                    <Insets right="10.0" />
-                </padding>
+            <GridPane.margin>
+               <Insets right="10.0" />
+            </GridPane.margin>
             </Label>
-            <Label fx:id="loggedInAsLabel" text="VOLUNTEER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+            <Label fx:id="loggedInAsLabel" text="ADMIN" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                 <GridPane.margin>
                     <Insets right="10.0" />
                 </GridPane.margin>
@@ -68,7 +68,7 @@
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
+                    <Hyperlink onAction="#goToProfile" text="Din Profil" underline="true" GridPane.rowIndex="9" />
                <Hyperlink onAction="#goToConfirmVolunteer" text="Frivilliggodkendelse" underline="true" GridPane.rowIndex="1" />
                <Hyperlink onAction="#goToFindVolunteer" text="Find Frivillig" underline="true" GridPane.rowIndex="2" />
                 </children>
@@ -132,15 +132,6 @@
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" GridPane.rowIndex="3" />
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tlf. nr.:" GridPane.rowIndex="4" />
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse:" GridPane.rowIndex="5" />
-                            <Button mnemonicParsing="false" onAction="#saveProfileChanges" text="Gem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
-                                <GridPane.margin>
-                                    <Insets right="5.0" />
-                                </GridPane.margin></Button>
-                            <Button mnemonicParsing="false" onAction="#goToProfile" text="Tilbage" GridPane.columnIndex="2" GridPane.rowIndex="8">
-                                <GridPane.margin>
-                                    <Insets left="5.0" />
-                                </GridPane.margin>
-                            </Button>
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Land:" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
                                 <GridPane.margin>
                                     <Insets right="5.0" />
@@ -161,14 +152,6 @@
                                     <Insets right="5.0" />
                                 </GridPane.margin>
                             </Text>
-                            <TextField fx:id="streetField" prefHeight="25.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                            <TextField fx:id="zipField" GridPane.columnIndex="3" GridPane.rowIndex="5">
-                                <GridPane.margin>
-                                    <Insets right="30.0" />
-                                </GridPane.margin>
-                            </TextField>
-                            <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                            <TextField fx:id="houseNoField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
                             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PostNr.:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
                                 <GridPane.margin>
                                     <Insets left="5.0" right="5.0" />
@@ -180,6 +163,23 @@
                             <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                             <TextField fx:id="phoneNoField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                             <TextField fx:id="countryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                            <TextField fx:id="streetField" prefHeight="25.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                            <TextField fx:id="zipField" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                                <GridPane.margin>
+                                    <Insets right="30.0" />
+                                </GridPane.margin>
+                            </TextField>
+                            <TextField fx:id="houseNoField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                            <Button mnemonicParsing="false" onAction="#saveProfileChanges" text="Gem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                                <GridPane.margin>
+                                    <Insets right="5.0" />
+                                </GridPane.margin></Button>
+                            <Button mnemonicParsing="false" onAction="#goToProfile" text="Annullér" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                <GridPane.margin>
+                                    <Insets left="5.0" />
+                                </GridPane.margin>
+                            </Button>
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Skift Adgangskode:" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ny Kode:" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                         <GridPane.margin>
@@ -207,6 +207,11 @@
                 </GridPane.margin>
             </Text>
             <Hyperlink onAction="#logOut" text="Log ud" underline="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+         <Text fill="#ffad30" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskilde Festival Frivilligportal" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets right="10.0" top="1.0" />
+            </GridPane.margin>
+         </Text>
         </children>
     </GridPane>
 </Scene>
