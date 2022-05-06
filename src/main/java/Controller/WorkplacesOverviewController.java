@@ -1,23 +1,17 @@
+//Polished, has todo
 package Controller;
 
-import Main.App;
 import Models.Team;
 import Models.TeamAdmin;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import static Main.App.*;
 
 public class WorkplacesOverviewController extends Controller {
@@ -31,7 +25,8 @@ public class WorkplacesOverviewController extends Controller {
         String name = null;
         List<Team> tList = new ArrayList<>();
         if (loginType == 1){
-            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " +
+                    context.Volunteers.get(loginID).personalInfo.getLastName());
             tList = context.Volunteers.get(loginID).teams;
         }
         else {
@@ -40,7 +35,7 @@ public class WorkplacesOverviewController extends Controller {
         }
         loggedInAsLabel.setText(name);
         int i = 1;
-        for (Team t : tList) {
+        for (Team t : tList) { //todo: set connected admin text to "Admin + adminLastName?"
             Hyperlink nextLink = new Hyperlink(t.getName());
             nextLink.setOnAction(this::goToWorkplace);
             nextLink.setId(Integer.toString(t.getId()));

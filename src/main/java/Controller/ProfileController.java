@@ -1,16 +1,9 @@
+//Polished
 package Controller;
 
-import Main.App;
-import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import static Main.App.*;
 
 public class ProfileController extends Controller {
@@ -30,7 +23,8 @@ public class ProfileController extends Controller {
         System.out.println("Init Profilectrl");
         String name = null;
         if (app.loginType == 1){
-            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " +
+                    context.Volunteers.get(loginID).personalInfo.getLastName());
             firstName.setText(context.Volunteers.get(loginID).personalInfo.getFirstName());
             lastName.setText(context.Volunteers.get(loginID).personalInfo.getLastName());
             language.setText(context.Volunteers.get(loginID).personalInfo.getLanguage());
@@ -57,8 +51,6 @@ public class ProfileController extends Controller {
             houseNo.setText(context.TeamAdmins.get(loginID).personalInfo.getNumber());
         }
         loggedInAsLabel.setText(name);
-        //todo: init personal values
     }
-
 
 }

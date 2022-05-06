@@ -24,9 +24,9 @@
         </rowConstraints>
         <children>
             <Label text="Logget ind som:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                <padding>
-                    <Insets right="10.0" />
-                </padding>
+            <GridPane.margin>
+               <Insets right="10.0" />
+            </GridPane.margin>
             </Label>
             <Label fx:id="loggedInAsLabel" text="VOLUNTEER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                 <GridPane.margin>
@@ -55,7 +55,7 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#goToWorkplaces" text="Arbejdspladser" underline="true" GridPane.rowIndex="3">
+                    <Hyperlink onAction="#goToWorkplaces" text="Arbejdspladser" underline="true" visited="true" GridPane.rowIndex="3">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
@@ -65,7 +65,7 @@
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
+                    <Hyperlink onAction="#goToProfile" text="Din Profil" underline="true" GridPane.rowIndex="9" />
                <Hyperlink onAction="#goToConfirmVolunteer" text="Frivilliggodkendelse" underline="true" GridPane.rowIndex="1" />
                <Hyperlink onAction="#goToFindVolunteer" text="Find Frivillig" underline="true" GridPane.rowIndex="2" />
                 </children>
@@ -134,6 +134,11 @@
                 </GridPane.margin>
             </Text>
             <Hyperlink onAction="#logOut" text="Log ud" underline="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+         <Text fill="#ffad30" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskilde Festival Frivilligportal" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets right="10.0" top="1.0" />
+            </GridPane.margin>
+         </Text>
         </children>
     </GridPane>
 </Scene>
