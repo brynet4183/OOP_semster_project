@@ -45,7 +45,7 @@ public class Shift implements Model {
         }
         int hours = t/60;
         int mins = t-(hours*60);
-        return retString + " " + hours + ":" + mins;
+        return retString + " " + (hours < 10 ? "0" + hours : hours) + ":" + (mins < 10 ? "0" + mins : mins);
     }
 
     public int getDurationInt() {
@@ -59,7 +59,7 @@ public class Shift implements Model {
     public String getDuration() {
         int hours = duration/60;
         int mins = duration-(hours*60);
-        return hours + ":" + mins;
+        return (hours < 10 ? "0" + hours : hours) + ":" + (mins < 10 ? "0" + mins : mins);
     }
 
     public String getStart() {

@@ -22,6 +22,9 @@ public class AWorkplaceController extends Controller {
 
     public Text workplaceTitle;
     public GridPane mainGrid;
+    public GridPane adminGrid;
+    public GridPane volGrid;
+    public GridPane shiftGrid;
 
 
     @Override
@@ -37,19 +40,25 @@ public class AWorkplaceController extends Controller {
         loggedInAsLabel.setText(name);
         workplaceTitle.setText(context.Teams.get(workPlace).getName());
         List<TeamAdmin> taList = context.Teams.get(workPlace).teamAdmins;
+        int i = 1;
         for (TeamAdmin ta: taList) {
             Text nameText = new Text(ta.personalInfo.getFirstName() + " " + ta.personalInfo.getLastName());
+            adminGrid.add(nameText, 0, i);
+            i++;
         }
         List<Volunteer> vList = context.Teams.get(workPlace).volunteers;
+        i = 1;
         for (Volunteer v: vList) {
             Text nameText = new Text(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+            volGrid.add(nameText, 0, i);
+            i++;
         }
         List<Shift> sList = context.Teams.get(workPlace).shifts;
+        i = 1;
         for (Shift s: sList) {
-            Text startText = new Text(s.getStart());
-            Text endText = new Text(s.getEnd());
-            Text durText = new Text(s.getDuration());
-            Text volText = new Text(s.volunteer.personalInfo.getFirstName());
+            Text shiftText = new Text(s.volunteer.personalInfo.getFirstName() + " " + s.getStart() +" - " + s.getEnd());
+            shiftGrid.add(shiftText, 0, i);
+            i++;
         }
     }
 }

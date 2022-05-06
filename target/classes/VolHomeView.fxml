@@ -100,6 +100,20 @@
                            <Font size="24.0" />
                         </font>
                      </Text>
+                      <GridPane fx:id="shiftGrid" GridPane.rowIndex="1" >
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                          </columnConstraints>
+                          <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arbejdsplads" GridPane.columnIndex="0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="start" GridPane.columnIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="slut" GridPane.columnIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="varighed" GridPane.columnIndex="3"/>
+                          </children>
+                      </GridPane>
                   </children>
                   <GridPane.margin>
                      <Insets />
