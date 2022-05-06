@@ -13,8 +13,7 @@ import java.util.ResourceBundle;
 
 import static Main.App.*;
 
-public class ProfileController implements Initializable {
-    public Label loggedInAsLabel;
+public class ProfileController extends Controller {
     public Text firstName;
     public Text lastName;
     public Text language;
@@ -25,11 +24,6 @@ public class ProfileController implements Initializable {
     public Text zip;
     public Text street;
     public Text houseNo;
-
-    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
-    //er lånt fra Christian Budtz' GitHub
-    private App app;
-    public void setParentController(App app) {this.app = app;}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -64,34 +58,6 @@ public class ProfileController implements Initializable {
         }
         loggedInAsLabel.setText(name);
         //todo: init personal values
-    }
-
-
-    //GoTo Block:
-    public void goToHome(ActionEvent actionEvent) throws IOException {
-        app.login();
-    }
-    public void goToProfile(ActionEvent actionEvent) throws IOException{
-        app.goToProfile();
-    }
-    public void goToWorkplaces(ActionEvent actionEvent) throws IOException {
-        app.goToWorkplaceOverview();
-    }
-    public void logOut(ActionEvent actionEvent) throws IOException {
-        app.goToLogin();
-    }
-
-    //Adm only methods
-
-    public void goToConfirmVolunteers(ActionEvent actionEvent) throws IOException {
-        app.goToConfirmVolunteer();}
-    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToFindVolunteer();}
-
-    //Edit profile
-
-    public void goToEditProfile(ActionEvent actionEvent) throws IOException {
-        app.goToEditProfile();
     }
 
 

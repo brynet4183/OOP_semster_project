@@ -48,6 +48,14 @@ public class Shift implements Model {
         return retString + " " + hours + ":" + mins;
     }
 
+    public int getDurationInt() {
+        return duration;
+    }
+
+    public int getStartInt() {
+        return start;
+    }
+
     public String getDuration() {
         int hours = duration/60;
         int mins = duration-(hours*60);

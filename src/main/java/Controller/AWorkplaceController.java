@@ -2,11 +2,13 @@ package Controller;
 
 import Main.App;
 import Models.Shift;
+import Models.TeamAdmin;
 import Models.Volunteer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -16,16 +18,10 @@ import java.util.ResourceBundle;
 
 import static Main.App.*;
 
-public class AWorkplaceController implements Initializable {
+public class AWorkplaceController extends Controller {
 
-    @FXML
-    private Label loggedInAsLabel;
-
-    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
-    //er lånt fra Christian Budtz' GitHub
-    private App app;
-    public void setParentController(App app) {this.app = app;}
-
+    public Text workplaceTitle;
+    public GridPane mainGrid;
 
 
     @Override
@@ -39,6 +35,11 @@ public class AWorkplaceController implements Initializable {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
         }
         loggedInAsLabel.setText(name);
+        workplaceTitle.setText(context.Teams.get(workPlace).getName());
+        List<TeamAdmin> taList = context.Teams.get(workPlace).teamAdmins;
+        for (TeamAdmin ta: taList) {
+            Text nameText = new Text(ta.personalInfo.getFirstName() + " " + ta.personalInfo.getLastName());
+        }
         List<Volunteer> vList = context.Teams.get(workPlace).volunteers;
         for (Volunteer v: vList) {
             Text nameText = new Text(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
@@ -50,44 +51,5 @@ public class AWorkplaceController implements Initializable {
             Text durText = new Text(s.getDuration());
             Text volText = new Text(s.volunteer.personalInfo.getFirstName());
         }
-        //todo: init workplace fields
-    }
-
-
-
-    //GoTo Block:
-    public void goToHome(ActionEvent actionEvent) throws IOException {
-        app.login();
-    }
-    public void goToProfile(ActionEvent actionEvent) throws IOException{
-        app.goToProfile();
-    }
-    public void goToWorkplaces(ActionEvent actionEvent) throws IOException {
-        app.goToWorkplaceOverview();
-    }
-    public void logOut(ActionEvent actionEvent) throws IOException {
-        app.goToLogin();
-    }
-
-    public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToConfirmVolunteer();
-    }
-
-    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToFindVolunteer();
-    }
-
-    public void goToWorkplace0(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(0);
-    }
-    public void goToWorkplace1(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(1);
-    }
-    public void goToWorkplace2(ActionEvent actionEvent) throws IOException {
-        app.goToAWorkplace(2);
-    }
-
-    public void goToEditSchedule(ActionEvent actionEvent) throws IOException{
-        app.goToEditSchedule();//Todo: pass workplace
     }
 }

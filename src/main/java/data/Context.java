@@ -13,7 +13,12 @@ public class Context {
     public DataMap<Integer,TeamAdmin> TeamAdmins = new DataMap<Integer,TeamAdmin>();
     public DataMap<Integer,Volunteer> Volunteers = new DataMap<Integer,Volunteer>();
 
-    public Context(){
+    private void load(){
+        Shifts = new DataMap<Integer, Shift>();
+        PersonalInfos = new DataMap<Integer, PersonalInfo>();
+        Teams = new DataMap<Integer,Team>();
+        TeamAdmins = new DataMap<Integer,TeamAdmin>();
+        Volunteers = new DataMap<Integer,Volunteer>();
         List<String> in = new ArrayList<String>();
         in = Reader.Read("teams");
         //id,name
@@ -68,6 +73,9 @@ public class Context {
             Volunteers.get(Integer.parseInt(line[1])).teams.add(Teams.get(Integer.parseInt(line[0])));
         }
     }
+    public Context(){
+        load();
+    }
     public void Save(){
         List<String> outTeams = new ArrayList<String>();
         List<String> outPersonalInfos = new ArrayList<String>();
@@ -100,7 +108,7 @@ public class Context {
         }
         //id,start,duration,team_id,volunteer_id
         for (Shift s : Shifts.values()) {
-            outShifts.add(s.getId() + ";" + s.getStart() + ";" + s.getDuration() + ";" + s.team.getId() + ";" + s.volunteer.getId());
+            outShifts.add(s.getId() + ";" + s.getStartInt() + ";" + s.getDurationInt() + ";" + s.team.getId() + ";" + s.volunteer.getId());
         }
         Writer.Write("personalInfo", outPersonalInfos);
         Writer.Write("teams", outTeams);
@@ -108,5 +116,6 @@ public class Context {
         Writer.Write("teamAdmins", outTeamAdmins);
         Writer.Write("volunteers", outVolunteers);
         Writer.Write("shifts", outShifts);
+        load();
     }
 }

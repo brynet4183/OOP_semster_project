@@ -1,15 +1,12 @@
 package Main;
 
 import Controller.*;
-import Models.Volunteer;
 import data.Context;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class App extends Application {
     private Stage stage;
@@ -41,7 +38,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else if (loginType == 1){  //volunteer login
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmHomeView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolHomeView.fxml"));
             Scene scene = loader.load();
             HomeController controller = loader.getController();
             controller.setParentController(this);
@@ -129,7 +126,7 @@ public class App extends Application {
             stage.setScene(scene);
         }
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolEditProfileView.fxml"));//todo: change to admin
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AdmEditProfileView.fxml"));//todo: change to admin
             Scene scene = loader.load();
             EditProfileController controller = loader.getController();
             controller.setParentController(this);
@@ -156,6 +153,30 @@ public class App extends Application {
     }
 
     public void goToEditSchedule() throws IOException{
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddShiftView.fxml"));
+        Scene scene = loader.load();
+        EditScheduleController controller = loader.getController();
+        controller.setParentController(this);
+        stage.setScene(scene);
+    }
 
+    public void goToEditTeam() throws IOException{
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditWorkplaceView.fxml"));
+        Scene scene = loader.load();
+        EditWorkplaceController controller = loader.getController();
+        controller.setParentController(this);
+        stage.setScene(scene);
+    }
+
+    public void goToEditVolunteer(int id) throws IOException{
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditVolunteerView.fxml"));
+        Scene scene = loader.load();
+        EditVolunteerController controller = loader.getController();
+        controller.volunteer_id = id;
+        controller.setParentController(this);
+        stage.setScene(scene);
     }
 }

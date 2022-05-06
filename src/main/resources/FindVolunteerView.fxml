@@ -58,7 +58,7 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="3">
+                    <Hyperlink onAction="#goToWorkplaces" text="Arbejdspladser" underline="true" GridPane.rowIndex="3">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>

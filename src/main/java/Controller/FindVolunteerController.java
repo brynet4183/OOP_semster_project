@@ -16,14 +16,9 @@ import java.util.ResourceBundle;
 import static Main.App.context;
 import static Main.App.loginID;
 
-public class FindVolunteerController implements Initializable {
-    public Label loggedInAsLabel;
+public class FindVolunteerController extends Controller {
     public ListView<String> listView;
     public TextField searchField;
-    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
-    //er lånt fra Christian Budtz' GitHub
-    private App app;
-    public void setParentController(App app) {this.app = app;}
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,32 +35,6 @@ public class FindVolunteerController implements Initializable {
         }));
     }
 
-
-
-
-
-
-    //GoTo Block:
-    public void goToHome(ActionEvent actionEvent) throws IOException {
-        app.login();
-    }
-    public void goToProfile(ActionEvent actionEvent) throws IOException{
-        app.goToProfile();
-    }
-    public void goToWorkplaces(ActionEvent actionEvent) throws IOException {
-        app.goToWorkplaceOverview();
-    }
-    public void logOut(ActionEvent actionEvent) throws IOException {
-        app.goToLogin();
-    }
-
-    public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToConfirmVolunteer();
-    }
-    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToFindVolunteer();
-    }
-
     public void search(ActionEvent actionEvent) {
         searchField.textProperty().addListener(((observableValue, s, t1) -> {
             listView.getItems().clear();
@@ -76,5 +45,9 @@ public class FindVolunteerController implements Initializable {
             }
             listView.getItems().addAll(list);
         }));
+    }
+
+    public void goToEditVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToEditVolunteer(1);
     }
 }

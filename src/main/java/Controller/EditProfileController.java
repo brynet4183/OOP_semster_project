@@ -13,8 +13,8 @@ import java.util.ResourceBundle;
 
 import static Main.App.*;
 
-public class EditProfileController implements Initializable {
-    public Label loggedInAsLabel;
+public class EditProfileController extends Controller {
+
     //Edit mode text fields
     public TextField firstNameField;
     public TextField lastNameField;
@@ -30,18 +30,11 @@ public class EditProfileController implements Initializable {
     public TextField passField2;
     public Text passStatusLabel;
 
-
-
-    //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
-    //er lånt fra Christian Budtz' GitHub
-    private App app;
-    public void setParentController(App app) {this.app = app;}
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Init Profilectrl");
         String name = null;
-        if (app.loginType == 1){
+        if (loginType == 1){
             //name = context.Volunteers.selectVolunteer((x)->x.getId()==app.loginID).get(0).getName();
             name = context.Volunteers.get(loginID).getName();
             firstNameField.setText(context.Volunteers.get(loginID).personalInfo.getFirstName());
@@ -112,27 +105,6 @@ public class EditProfileController implements Initializable {
                 passStatusLabel.setText("Adgangskoderne skal være ens!");
             }
         }
-    }
-    //GoTo Block:
-    public void goToHome(ActionEvent actionEvent) throws IOException {
-        app.login();
-    }
-    public void goToProfile(ActionEvent actionEvent) throws IOException{
-        app.goToProfile();
-    }
-    public void goToWorkplaces(ActionEvent actionEvent) throws IOException {
-        app.goToWorkplaceOverview();
-    }
-    public void logOut(ActionEvent actionEvent) throws IOException {
-        app.goToLogin();
-    }
-
-
-    public void goToConfirmVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToConfirmVolunteer();
-    }
-    public void goToFindVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToFindVolunteer();
     }
 
 }

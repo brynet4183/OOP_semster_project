@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import java.io.IOException;
+import java.util.Objects;
+
 import static Main.App.context; //giver adgang til data
 
 public class RegisterController {
@@ -55,16 +57,16 @@ public class RegisterController {
             app.goToLogin();
     }
     public boolean allFieldsFilled(){
-        if( registerFirstnameField.getText()!=""    &&
-            registerLastnameField.getText() !=""    &&
-            registerEmailField.getText()    !=""    &&
-            registerLanguageField.getText() !=""    &&
-            registerCityField.getText()     !=""    &&
-            registerZipField.getText()      !=""    &&
-            registerStreetField.getText()   !=""    &&
-            registerNoField.getText()       !=""    &&
-            registerCountryField.getText()  !=""    &&
-            registerPhonenoField.getText()  !=""    ) {
+        if(!Objects.equals(registerFirstnameField.getText(), "") &&
+                !Objects.equals(registerLastnameField.getText(), "") &&
+                !Objects.equals(registerEmailField.getText(), "") &&
+                !Objects.equals(registerLanguageField.getText(), "") &&
+                !Objects.equals(registerCityField.getText(), "") &&
+                !Objects.equals(registerZipField.getText(), "") &&
+                !Objects.equals(registerStreetField.getText(), "") &&
+                !Objects.equals(registerNoField.getText(), "") &&
+                !Objects.equals(registerCountryField.getText(), "") &&
+                !Objects.equals(registerPhonenoField.getText(), "")) {
             return true;}
             else {return false;}
     }

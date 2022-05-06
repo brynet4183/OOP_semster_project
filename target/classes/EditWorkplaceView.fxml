@@ -12,6 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.ComboBox?>
 <Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EditWorkplaceController">
     <GridPane gridLinesVisible="true" minHeight="400.0" minWidth="600.0">
         <columnConstraints>
@@ -57,7 +58,7 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="3">
+                    <Hyperlink onAction="#goToWorkplaces" text="Arbejdspladser" underline="true" GridPane.rowIndex="3">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
@@ -93,7 +94,7 @@
                             <RowConstraints vgrow="SOMETIMES" />
                         </rowConstraints>
                         <children>
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Redigér Arbejdsplads" GridPane.halignment="LEFT" GridPane.valignment="TOP">
+                            <Text fx:id="Title" strokeType="OUTSIDE" strokeWidth="0.0" text="Redigér Arbejdsplads" GridPane.halignment="LEFT" GridPane.valignment="TOP">
                                 <font>
                                     <Font size="24.0" />
                                 </font>
@@ -126,65 +127,32 @@
                             <Insets />
                         </GridPane.margin>
                         <children>
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Navn:" />
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ledere:" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Frivillige:" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                            <Button mnemonicParsing="false" onAction="#saveProfileChanges" text="Gem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
-                                <GridPane.margin>
-                                    <Insets right="5.0" />
-                                </GridPane.margin></Button>
-                            <Button mnemonicParsing="false" onAction="#goToAWorkplace" text="Tilbage" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Frivillige:" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+                            <Button mnemonicParsing="false" onAction="#goToAWorkplace" text="Tilbage" GridPane.columnIndex="3" GridPane.rowIndex="9">
                                 <GridPane.margin>
                                     <Insets left="5.0" />
                                 </GridPane.margin>
                             </Button>
-                            <TextField fx:id="addPersonnelField" prefHeight="25.0" prefWidth="133.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
-                        <GridPane.margin>
-                           <Insets />
-                        </GridPane.margin></TextField>
-                            <TextField fx:id="nameField" text="WORKSPACENAME" GridPane.columnIndex="1" GridPane.columnSpan="2">
-                        <GridPane.margin>
-                           <Insets right="5.0" />
-                        </GridPane.margin></TextField>
                             <Text fx:id="passStatusLabel" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                     <Button mnemonicParsing="false" text="Tilføj Leder" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
-                        <GridPane.margin>
-                           <Insets right="10.0" />
-                        </GridPane.margin>
-                     </Button>
-                     <Button mnemonicParsing="false" text="Tilføj Frivillig" GridPane.columnIndex="2" GridPane.rowIndex="8">
-                        <GridPane.margin>
-                           <Insets left="10.0" />
-                        </GridPane.margin>
-                     </Button>
-                     <GridPane GridPane.columnSpan="2" GridPane.rowIndex="2">
+                            <ComboBox fx:id="volunteers" layoutX="15.0" layoutY="33.0" prefWidth="90.0" GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.rowIndex="9" promptText="choose">
+                                <GridPane.margin>
+                                    <Insets right="10.0" />
+                                </GridPane.margin>
+                            </ComboBox>
+                             <Button mnemonicParsing="false" onAction="#addTeamMember" text="Tilføj Frivillig" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                <GridPane.margin>
+                                   <Insets left="10.0" />
+                                </GridPane.margin>
+                             </Button>
+                     <GridPane fx:id="mainGrid" GridPane.columnSpan="4" GridPane.rowIndex="1">
                        <columnConstraints>
-                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
                        </columnConstraints>
                        <rowConstraints>
                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                        </rowConstraints>
                         <children>
-                           <Button fx:id="removeLeader" mnemonicParsing="false" text="Fjern" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                           <Text fx:id="leaderInfo" strokeType="OUTSIDE" strokeWidth="0.0" text="LEADERINFO" />
-                        </children>
-                     </GridPane>
-                     <GridPane GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="2">
-                       <columnConstraints>
-                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" />
-                       </columnConstraints>
-                       <rowConstraints>
-                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                       </rowConstraints>
-                        <children>
-                           <Button fx:id="removeVolunteer" mnemonicParsing="false" text="Fjern" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-                           <Text fx:id="volunteerInfo" strokeType="OUTSIDE" strokeWidth="0.0" text="VOLUNTEERINFO">
-                              <GridPane.margin>
-                                 <Insets left="5.0" />
-                              </GridPane.margin>
-                           </Text>
                         </children>
                      </GridPane>
                         </children>
