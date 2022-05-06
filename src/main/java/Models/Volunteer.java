@@ -1,7 +1,9 @@
 package Models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
 
 public class Volunteer implements Model{
     private int id;
@@ -23,7 +25,6 @@ public class Volunteer implements Model{
         teams = new ArrayList<>();
         shifts = new ArrayList<>();
     }
-
     public int getId() {
         return id;
     }
@@ -65,9 +66,29 @@ public class Volunteer implements Model{
     public void setId(int id) {
         this.id = id;
     }
+
+    private String generateSalt(){
+        byte[] array = new byte[20];
+        new Random().nextBytes(array);
+        return new String(array, StandardCharsets.UTF_8);
+    }
+
+    public void securePassword(){
+        if(Objects.equals(this.salt, "something")){
+            this.salt = generateSalt();
+            this.password = hash(this.password.substring(0,this.password.length()-9));
+        }
+    }
     private String hash(String password) {
         if(this.salt == null)
-            this.salt = "something";
-        return password + this.salt;
+            this.salt = generateSalt();
+        password = password + salt;
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+            return Arrays.toString(Base64.getEncoder().encode(hash));
+        } catch (NoSuchAlgorithmException e){
+            throw new RuntimeException(e);
+        }
     }
 }
