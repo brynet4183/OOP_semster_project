@@ -1,21 +1,14 @@
+//Polished, has TODO
 package Controller;
 
-import Main.App;
 import Models.Shift;
 import Models.TeamAdmin;
 import Models.Volunteer;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import static Main.App.*;
 
 public class AWorkplaceController extends Controller {
@@ -26,13 +19,13 @@ public class AWorkplaceController extends Controller {
     public GridPane volGrid;
     public GridPane shiftGrid;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Init WorkplaceOverviewCtrl");
         String name = null;
         if (loginType == 1){
-            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " + context.Volunteers.get(loginID).personalInfo.getLastName());
+            name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " +
+                    context.Volunteers.get(loginID).personalInfo.getLastName());
         }
         else {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
@@ -60,5 +53,6 @@ public class AWorkplaceController extends Controller {
             shiftGrid.add(shiftText, 0, i);
             i++;
         }
+        //TODO: Show workplaces in navGrid, this being visited=true
     }
 }
