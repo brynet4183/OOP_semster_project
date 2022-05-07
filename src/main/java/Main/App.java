@@ -174,7 +174,7 @@ public class App extends Application {
     public void goToVolunteer(int id) throws IOException{
         volunteer_id = id;
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/volunteerView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/VolunteerView.fxml"));
         Scene scene = loader.load();
         VolunteerController controller = loader.getController();
         controller.setParentController(this);
