@@ -9,8 +9,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-
-import java.awt.desktop.SystemEventListener;
 import java.io.IOException;
 import java.util.List;
 
@@ -47,7 +45,11 @@ public class LoginController{
                     app.login();
                     return;
                 }
-                else {loginStatusLabel.setText("Du er ikke godkendt");}
+                else {
+                    loginStatusLabel.setText("Du er ikke godkendt - Prøv igen senere");
+                    loginStatusLabel.setTextFill(Color.ORANGERED);
+                    return;
+                }
             }
             loginStatusLabel.setText("Forkert ID eller password");
             loginStatusLabel.setTextFill(Color.RED);

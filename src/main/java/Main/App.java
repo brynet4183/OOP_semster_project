@@ -155,7 +155,7 @@ public class App extends Application {
 
     public void goToEditSchedule() throws IOException{
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddShiftView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditScheduleView.fxml"));
         Scene scene = loader.load();
         EditScheduleController controller = loader.getController();
         controller.setParentController(this);

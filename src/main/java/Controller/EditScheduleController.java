@@ -1,19 +1,15 @@
+//Polished
 package Controller;
 
-import Main.App;
 import Models.Shift;
 import Models.Team;
 import Models.Volunteer;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -23,10 +19,8 @@ import static Main.App.*;
 
 public class EditScheduleController extends Controller {
 
-
     public GridPane mainGrid;
     public Text Title;
-    public Text passStatusLabel;
     public ComboBox<String> volunteers;
     public ComboBox<String> dates;
     public TextField duration;

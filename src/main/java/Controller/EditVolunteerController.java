@@ -1,18 +1,14 @@
+//Polished
 package Controller;
 
-import Main.App;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
-
 import static Main.App.*;
 import static Main.App.context;
 
@@ -50,7 +46,6 @@ public class EditVolunteerController extends Controller {
         streetField.setText(context.Volunteers.get(volunteer_id).personalInfo.getStreet());
         houseNoField.setText(context.Volunteers.get(volunteer_id).personalInfo.getNumber());
     }
-
 
     public void saveProfileChanges(ActionEvent actionEvent) throws IOException {
         context.Volunteers.get(volunteer_id).personalInfo.setFirstName(firstNameField.getText());

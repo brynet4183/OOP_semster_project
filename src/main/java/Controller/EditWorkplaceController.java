@@ -1,3 +1,4 @@
+//Polished
 package Controller;
 
 import Models.Team;
@@ -5,10 +6,8 @@ import Models.Volunteer;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -20,7 +19,6 @@ public class EditWorkplaceController extends Controller {
 
     public GridPane mainGrid;
     public Text Title;
-    public Text passStatusLabel;
     public ComboBox<String> volunteers;
 
     @Override

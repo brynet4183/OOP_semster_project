@@ -2,11 +2,17 @@
 package Controller;
 
 import Models.Shift;
+import Models.Team;
 import Models.TeamAdmin;
 import Models.Volunteer;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import static Main.App.*;
@@ -15,6 +21,7 @@ public class AWorkplaceController extends Controller {
 
     public Text workplaceTitle;
     public GridPane mainGrid;
+    public GridPane navGrid;
     public GridPane adminGrid;
     public GridPane volGrid;
     public GridPane shiftGrid;
@@ -23,12 +30,15 @@ public class AWorkplaceController extends Controller {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Init WorkplaceOverviewCtrl");
         String name = null;
+        List<Team> tList = new ArrayList<>();//EXP
         if (loginType == 1){
             name = (context.Volunteers.get(loginID).personalInfo.getFirstName() + " " +
                     context.Volunteers.get(loginID).personalInfo.getLastName());
+                    tList = context.Volunteers.get(loginID).teams;//EXP
         }
         else {
             name = "Admin " + context.TeamAdmins.get(loginID).personalInfo.getLastName();
+            tList = context.Teams.selectTeam((x) -> x.getId() > 0);//EXP
         }
         loggedInAsLabel.setText(name);
         workplaceTitle.setText(context.Teams.get(workPlace).getName());
@@ -53,6 +63,42 @@ public class AWorkplaceController extends Controller {
             shiftGrid.add(shiftText, 0, i);
             i++;
         }
+
+        //EXPERIMENT>
+        int navi = 1;
+        for (Team t : tList) { //todo: set connected admin text to "Admin + adminLastName?"
+            Hyperlink nextLink = new Hyperlink(t.getName());
+            nextLink.setOnAction(this::goToWorkplace);
+            nextLink.setId(Integer.toString(t.getId()));
+            nextLink.setUnderline(true);
+            mainGrid.add(nextLink, 0,navi);
+            nextLink = new Hyperlink(t.getName());
+            nextLink.setOnAction(this::goToWorkplace);
+            nextLink.setId(Integer.toString(t.getId()));
+            nextLink.setUnderline(true);
+            if(navi <= 3)
+                navGrid.add(nextLink, 0,navi+(loginType == 1 ? 1 : 3));
+            List<TeamAdmin> taaList = t.teamAdmins;
+            int j = 1;
+            for (TeamAdmin ta : taaList) {
+                Text nextAdmin = new Text(ta.getName());
+                mainGrid.add(nextAdmin, j,navi);
+                j++;
+            }
+            navi++;
+        }
+
+        //<EXPERIMENT
+
         //TODO: Show workplaces in navGrid, this being visited=true
+    }
+    public void goToWorkplace(ActionEvent actionEvent) {
+        Object node = actionEvent.getSource();
+        Hyperlink b = (Hyperlink)node;
+        try {
+            app.goToAWorkplace(Integer.parseInt(b.getId()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
