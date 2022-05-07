@@ -51,7 +51,7 @@ public class EditWorkplaceController extends Controller {
 
     public void addTeamMember(ActionEvent actionEvent) {
         String sel = volunteers.getValue();
-        sel = sel.substring(1,2);
+        sel = sel.replace("(", "").split("\\)")[0];
         Volunteer v = context.Volunteers.get(Integer.parseInt(sel));
         context.Teams.get(workPlace).volunteers.add(v);
         context.Volunteers.get(v.getId()).teams.add(context.Teams.get(workPlace));

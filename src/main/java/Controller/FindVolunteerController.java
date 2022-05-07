@@ -1,11 +1,9 @@
 package Controller;
 import Models.Volunteer;
-import Main.App;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,7 +26,7 @@ public class FindVolunteerController extends Controller {
             listView.getItems().clear();
             List<String> list = new ArrayList<>();
             for (Volunteer v: context.Volunteers.selectVolunteer((x)-> x.personalInfo.getFirstName().contains(t1) || x.personalInfo.getLastName().contains(t1))) {
-                list.add(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+                list.add("(" + v.getId() + ")" + v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
                 System.out.println(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
             }
             listView.getItems().addAll(list);
@@ -40,14 +38,16 @@ public class FindVolunteerController extends Controller {
             listView.getItems().clear();
             List<String> list = new ArrayList<>();
             for (Volunteer v: context.Volunteers.selectVolunteer((x)-> x.personalInfo.getFirstName().contains(t1) || x.personalInfo.getLastName().contains(t1))) {
-                list.add(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
+                list.add("(" + v.getId() + ")" + v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
                 System.out.println(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
             }
             listView.getItems().addAll(list);
         }));
     }
 
-    public void goToEditVolunteer(ActionEvent actionEvent) throws IOException {
-        app.goToEditVolunteer(1);
+    public void goToVolunteer(MouseEvent actionEvent) throws IOException {
+        String sel = listView.getSelectionModel().getSelectedItem();
+        sel = sel.replace("(", "").split("\\)")[0];
+        app.goToVolunteer(Integer.parseInt(sel));
     }
 }

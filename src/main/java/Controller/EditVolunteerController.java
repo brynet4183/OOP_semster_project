@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -31,7 +32,6 @@ public class EditVolunteerController extends Controller {
     public TextField passField1;
     public TextField passField2;
     public Text passStatusLabel;
-    public int volunteer_id;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -77,6 +77,10 @@ public class EditVolunteerController extends Controller {
                 passStatusLabel.setText("Adgangskoderne skal være ens!");
             }
         }
+    }
+
+    public void goToVolunteer(ActionEvent actionEvent) throws IOException {
+        app.goToVolunteer(volunteer_id);
     }
 
 

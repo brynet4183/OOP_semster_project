@@ -78,9 +78,9 @@ public class EditScheduleController extends Controller {
         int duration = 0;
         int start = 0;
         String sel = volunteers.getValue();
-        sel = sel.substring(1,2);
+        sel = sel.replace("(", "").split("\\)")[0];
         String days = dates.getValue();
-        days = days.substring(1,2);
+        days = days.replace("(", "").split("\\)")[0];
         start = Integer.parseInt(days)*1440;
         String durTime = this.duration.getText();
         String dhour = durTime.substring(0,2);

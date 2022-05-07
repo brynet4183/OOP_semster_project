@@ -24,9 +24,9 @@
         </rowConstraints>
         <children>
             <Label text="Logget ind som:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                <padding>
-                    <Insets right="10.0" />
-                </padding>
+            <GridPane.margin>
+               <Insets right="10.0" />
+            </GridPane.margin>
             </Label>
             <Label fx:id="loggedInAsLabel" text="VOLUNTEER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                 <GridPane.margin>
@@ -65,7 +65,7 @@
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
+                    <Hyperlink onAction="#goToProfile" text="Din Profil" underline="true" GridPane.rowIndex="9" />
                 </children>
                 <GridPane.margin>
                     <Insets left="5.0" />
@@ -109,13 +109,16 @@
                             <Insets />
                         </GridPane.margin>
                         <children>
-                            <GridPane fx:id="adminGrid" GridPane.columnIndex="0" >
+                            <GridPane fx:id="adminGrid" GridPane.columnIndex="0">
                                 <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
                                 </columnConstraints>
                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ledere:"  />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ledere:" />
                                 </children>
+                        <rowConstraints>
+                           <RowConstraints />
+                        </rowConstraints>
                             </GridPane>
                             <GridPane fx:id="volGrid" GridPane.columnIndex="1">
                                 <columnConstraints>
@@ -124,16 +127,25 @@
                                 <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Medarbejdere:" />
                                 </children>
+                        <rowConstraints>
+                           <RowConstraints />
+                        </rowConstraints>
                             </GridPane>
-                            <GridPane fx:id="shiftGrid" GridPane.columnIndex="2" >
+                            <GridPane fx:id="shiftGrid" GridPane.columnIndex="2">
                                 <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
                                 </columnConstraints>
                                 <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vagtplan:" />
                                 </children>
+                        <rowConstraints>
+                           <RowConstraints />
+                        </rowConstraints>
                             </GridPane>
                         </children>
+                  <rowConstraints>
+                     <RowConstraints />
+                  </rowConstraints>
                     </GridPane>
                 </children>
                 <GridPane.margin>
@@ -146,6 +158,11 @@
                 </GridPane.margin>
             </Text>
             <Hyperlink onAction="#logOut" text="Log ud" underline="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+         <Text fill="#ffad30" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskilde Festival Frivilligportal" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets right="10.0" top="1.0" />
+            </GridPane.margin>
+         </Text>
         </children>
     </GridPane>
 </Scene>

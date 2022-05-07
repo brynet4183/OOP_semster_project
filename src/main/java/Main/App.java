@@ -14,6 +14,7 @@ public class App extends Application {
     public static int loginID = 0;
     public static int workPlace = 0;
     public static int loginType = 0;
+    public static int volunteer_id = 0;
     public static void run(){
         context = new Context();
         launch();
@@ -170,12 +171,20 @@ public class App extends Application {
         stage.setScene(scene);
     }
 
-    public void goToEditVolunteer(int id) throws IOException{
+    public void goToVolunteer(int id) throws IOException{
+        volunteer_id = id;
+        //Struktur/Delelementer lånt fra Christian Budtz' GitHub
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/volunteerView.fxml"));
+        Scene scene = loader.load();
+        VolunteerController controller = loader.getController();
+        controller.setParentController(this);
+        stage.setScene(scene);
+    }
+    public void goToEditVolunteer() throws IOException{
         //Struktur/Delelementer lånt fra Christian Budtz' GitHub
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/EditVolunteerView.fxml"));
         Scene scene = loader.load();
         EditVolunteerController controller = loader.getController();
-        controller.volunteer_id = id;
         controller.setParentController(this);
         stage.setScene(scene);
     }

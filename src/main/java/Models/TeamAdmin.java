@@ -59,11 +59,23 @@ public class TeamAdmin implements Model{
             this.salt = generateSalt();
             this.password = hash(this.password.substring(0,this.password.length()-9));
         }
+
+        this.salt = Arrays.toString(Base64.getEncoder().encode(this.salt.getBytes(StandardCharsets.UTF_8)));
     }
+
+    private static String getStringFromSalt(String string) {
+        String[] bytes = string.replace("[", "").replace("]", "").split(", ");
+        byte[] array = new byte[bytes.length];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Byte.parseByte(bytes[i]);
+        }
+        return new String(Base64.getDecoder().decode(array), StandardCharsets.UTF_8);
+    }
+
     private String hash(String password) {
         if(this.salt == null)
             this.salt = generateSalt();
-        password = password + salt;
+        password = password + getStringFromSalt(salt);
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));

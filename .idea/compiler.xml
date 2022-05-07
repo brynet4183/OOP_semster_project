@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="roskilde" />
+        <module name="OOP_semster_project" />
       </profile>
     </annotationProcessing>
   </component>

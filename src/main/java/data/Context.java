@@ -1,9 +1,7 @@
 package data;
 import Models.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 public class Context {
@@ -104,6 +102,7 @@ public class Context {
         }
         //id,name,password,salt,confirmed,personalInfo_id
         for (Volunteer v : Volunteers.values()) {
+            System.out.println(v.getId() + ";" + v.getName() + ";" + v.getPassword() + ";" + v.getSalt() + ";" + v.getConfirmed() + ";" + v.personalInfo.getId());
             outVolunteers.add(v.getId() + ";" + v.getName() + ";" + v.getPassword() + ";" + v.getSalt() + ";" + v.getConfirmed() + ";" + v.personalInfo.getId());
         }
         //id,start,duration,team_id,volunteer_id
