@@ -46,7 +46,7 @@ public class LoginController{
                     return;
                 }
                 else {
-                    loginStatusLabel.setText("Du er endnu ikke godkendt i systemet - Prøv igen senere");
+                    loginStatusLabel.setText("Du er endnu ikke godkendt i systemet\nPrøv igen senere");
                     loginStatusLabel.setTextFill(Color.ORANGERED);
                     return;
                 }
