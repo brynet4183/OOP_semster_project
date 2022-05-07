@@ -87,9 +87,12 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleLoginBtnClick" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP" />
+      <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleLoginBtnClick" text="LOG IND" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets top="7.0" />
+            </GridPane.margin></Button>
       <Button mnemonicParsing="false" onAction="#handleRegisterBtnClick" text="Registrér dig" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-         <Label fx:id="loginStatusLabel" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+         <Label fx:id="loginStatusLabel" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="3" GridPane.valignment="TOP" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Benedicte &amp; Johnny Inc." GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
          <Text fill="#ffad30" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskilde Festival Frivilligsystem" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
    </children>
