@@ -15,27 +15,27 @@ public class Shift implements Model {
     private String timeCalc(int t){
         String retString = "";
         if(t < 1440){
-            retString = "Lørdag ";
+            retString = "Lørdag 25/6 ";
         } else if(t < 1440*2){
-            retString = "Søndag ";
+            retString = "Søndag 26/6 ";
             t -= 1440;
         } else if(t < 1440*3){
-            retString = "Mandag ";
+            retString = "Mandag 27/6 ";
             t -= 1440*2;
         } else if(t < 1440*4){
-            retString = "Tirsdag ";
+            retString = "Tirsdag 28/6 ";
             t -= 1440*3;
         } else if(t < 1440*5){
-            retString = "Onsdag ";
+            retString = "Onsdag 29/6 ";
             t -= 1440*4;
         } else if(t < 1440*6){
-            retString = "Torsdag ";
+            retString = "Torsdag 30/6 ";
             t -= 1440*5;
         } else if(t < 1440*7){
-            retString = "Fredag ";
+            retString = "Fredag 1/7 ";
             t -= 1440*6;
         } else if(t < 1440*8){
-            retString = "Lørdag ";
+            retString = "Lørdag 2/7 ";
             t -= 1440*7;
         } else {
             retString = "??? ";

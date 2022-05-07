@@ -48,13 +48,14 @@ public class EditScheduleController extends Controller {
             i++;
         }
         dates.getItems().addAll(
-                "(0) Lørdag",
-                "(1) Mandag",
-                "(2) Tirsdag",
-                "(3) Onsdag",
-                "(4) Torsdag",
-                "(5) Fredag",
-                "(8) Lørdag"
+                "(0) Lørdag 25/6",
+                "(1) Søndag 26/6",
+                "(2) Mandag 27/6",
+                "(3) Tirsdag 28/6",
+                "(4) Onsdag 29/6",
+                "(5) Torsdag 30/6",
+                "(6) Fredag 1/7",
+                "(7) Lørdag 2/7"
         );
     }
     public void removeShift(ActionEvent actionEvent) {
