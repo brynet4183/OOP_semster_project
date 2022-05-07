@@ -60,13 +60,13 @@ public class EditVolunteerController extends Controller {
         context.Volunteers.get(volunteer_id).personalInfo.setNumber(houseNoField.getText());
         if (Objects.equals(passField1.getText(), "") && Objects.equals(passField2.getText(), "")){
             context.Save();
-            app.goToProfile();
+            app.goToVolunteer(volunteer_id);
         }
         else{
             if (passField1.getText().equals(passField2.getText())){
                 context.Volunteers.get(volunteer_id).setPassword(passField1.getText());
                 context.Save();
-                app.goToProfile();
+                app.goToVolunteer(volunteer_id);
             }
             else{
                 passStatusLabel.setText("Adgangskoderne skal være ens!");
