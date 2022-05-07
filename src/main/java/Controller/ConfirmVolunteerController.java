@@ -1,23 +1,16 @@
+//Polished. Has (todo): make sure fields match titles
 package Controller;
 
-import Main.App;
-import Models.PersonalInfo;
 import Models.Volunteer;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.shape.StrokeType;
 import javafx.scene.text.Text;
-import javafx.scene.control.Label;
-
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 

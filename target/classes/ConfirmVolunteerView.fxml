@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Scene?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -25,9 +24,9 @@
         </rowConstraints>
         <children>
             <Label text="Logget ind som:" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
-                <padding>
-                    <Insets right="10.0" />
-                </padding>
+            <GridPane.margin>
+               <Insets right="10.0" />
+            </GridPane.margin>
             </Label>
             <Label fx:id="loggedInAsLabel" text="ADMIN" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                 <GridPane.margin>
@@ -56,7 +55,7 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <Hyperlink onAction="#goToWorkplaces" text="Dine Arbejdspladser" underline="true" GridPane.rowIndex="3">
+                    <Hyperlink onAction="#goToWorkplaces" text="Arbejdspladser" underline="true" GridPane.rowIndex="3">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin>
@@ -66,8 +65,8 @@
                             <Insets />
                         </GridPane.margin>
                     </Hyperlink>
-                    <Hyperlink onAction="#goToProfile" text="Profil" underline="true" GridPane.rowIndex="7" />
-                    <Hyperlink onAction="#goToConfirmVolunteers" text="Frivilliggodkendelse" underline="true" GridPane.rowIndex="1" />
+                    <Hyperlink onAction="#goToProfile" text="Din Profil" underline="true" GridPane.rowIndex="9" />
+                    <Hyperlink onAction="#goToConfirmVolunteers" text="Frivilliggodkendelse" underline="true" visited="true" GridPane.rowIndex="1" />
                     <Hyperlink onAction="#goToFindVolunteer" text="Find Frivillig" underline="true" GridPane.rowIndex="2" />
                 </children>
                 <GridPane.margin>
@@ -83,7 +82,7 @@
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 </rowConstraints>
                 <children>
-                    <GridPane >
+                    <GridPane>
                         <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="135.0" />
                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="357.99995930989576" minWidth="10.0" prefWidth="353.33333333333326" />
@@ -140,7 +139,7 @@
                                    <RowConstraints maxHeight="-Infinity" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                 <children>
-                                   <Text fx:id="firstName" strokeType="OUTSIDE" strokeWidth="0.0" text="Navn:" GridPane.columnIndex="1">
+                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Navn:" GridPane.columnIndex="1">
                                       <GridPane.margin>
                                          <Insets left="5.0" />
                                       </GridPane.margin>
@@ -190,6 +189,11 @@
                 </GridPane.margin>
             </Text>
             <Hyperlink onAction="#logOut" text="Log ud" underline="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+         <Text fill="#ffad30" strokeType="OUTSIDE" strokeWidth="0.0" text="Roskilde Festival Frivilligsystem" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <GridPane.margin>
+               <Insets right="10.0" top="1.0" />
+            </GridPane.margin>
+         </Text>
         </children>
     </GridPane>
 </Scene>
