@@ -4,14 +4,12 @@ import Main.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     public Label loggedInAsLabel;
-
 
     //Struktur af reference til main-controller, initialize og funktionskald ved sceneskift
     //er lånt fra Christian Budtz' GitHub
@@ -20,8 +18,6 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){}
-
-
 
 
 
@@ -50,8 +46,6 @@ public class Controller implements Initializable {
     public void goToEditSchedule(ActionEvent actionEvent) throws IOException{
         app.goToEditSchedule();
     }
-
-
     public void goToEditTeam(ActionEvent actionEvent) throws IOException{
         app.goToEditTeam();
     }
