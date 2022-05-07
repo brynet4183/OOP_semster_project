@@ -1,12 +1,10 @@
+//Polished
 package Controller;
+
 import Models.Volunteer;
-import Main.App;
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -39,7 +37,8 @@ public class FindVolunteerController extends Controller {
         searchField.textProperty().addListener(((observableValue, s, t1) -> {
             listView.getItems().clear();
             List<String> list = new ArrayList<>();
-            for (Volunteer v: context.Volunteers.selectVolunteer((x)-> x.personalInfo.getFirstName().contains(t1) || x.personalInfo.getLastName().contains(t1))) {
+            for (Volunteer v: context.Volunteers.selectVolunteer((x)->
+                x.personalInfo.getFirstName().contains(t1) || x.personalInfo.getLastName().contains(t1))) {
                 list.add(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
                 System.out.println(v.personalInfo.getFirstName() + " " + v.personalInfo.getLastName());
             }
