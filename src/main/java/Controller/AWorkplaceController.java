@@ -71,7 +71,6 @@ public class AWorkplaceController extends Controller {
             nextLink.setOnAction(this::goToWorkplace);
             nextLink.setId(Integer.toString(t.getId()));
             nextLink.setUnderline(true);
-            mainGrid.add(nextLink, 0,navi);
             nextLink = new Hyperlink(t.getName());
             nextLink.setOnAction(this::goToWorkplace);
             nextLink.setId(Integer.toString(t.getId()));
@@ -82,7 +81,6 @@ public class AWorkplaceController extends Controller {
             int j = 1;
             for (TeamAdmin ta : taaList) {
                 Text nextAdmin = new Text(ta.getName());
-                mainGrid.add(nextAdmin, j,navi);
                 j++;
             }
             navi++;
