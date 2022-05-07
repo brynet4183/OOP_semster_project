@@ -174,7 +174,7 @@
                                     <Insets right="10.0" />
                                 </GridPane.margin>
                             </Button>
-                            <Button mnemonicParsing="false" onAction="#goToAWorkplace" text="Annullér" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                            <Button mnemonicParsing="false" onAction="#goToAWorkplace" text="Tilbage" GridPane.columnIndex="4" GridPane.rowIndex="8">
                                 <GridPane.margin>
                                     <Insets right="10.0" />
                                 </GridPane.margin>
