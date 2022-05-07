@@ -7,6 +7,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static Main.App.*;
@@ -27,6 +28,7 @@ public class EditProfileController extends Controller {
     public TextField passField1;
     public TextField passField2;
     public Text passStatusLabel;
+    public Text saveStatus;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -63,6 +65,10 @@ public class EditProfileController extends Controller {
 
 
     public void saveProfileChanges(ActionEvent actionEvent) throws IOException {
+        if (!allFieldsFilled()){
+            saveStatus.setText("Der er tomme profilinformationsfelter!");
+            return;
+        }
         if(loginType==1){
             context.Volunteers.get(loginID).personalInfo.setFirstName(firstNameField.getText());
             context.Volunteers.get(loginID).personalInfo.setLastName(lastNameField.getText());
@@ -102,6 +108,20 @@ public class EditProfileController extends Controller {
                 passStatusLabel.setText("Adgangskoderne skal være ens!");
             }
         }
+    }
+    public boolean allFieldsFilled(){
+        if(!Objects.equals(firstNameField.getText(), "") &&
+                !Objects.equals(lastNameField.getText(), "") &&
+                !Objects.equals(emailField.getText(), "") &&
+                !Objects.equals(languageField.getText(), "") &&
+                !Objects.equals(cityField.getText(), "") &&
+                !Objects.equals(zipField.getText(), "") &&
+                !Objects.equals(streetField.getText(), "") &&
+                !Objects.equals(houseNoField.getText(), "") &&
+                !Objects.equals(countryField.getText(), "") &&
+                !Objects.equals(phoneNoField.getText(), "")) {
+            return true;}
+        else {return false;}
     }
 
 }
