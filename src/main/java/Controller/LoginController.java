@@ -47,7 +47,11 @@ public class LoginController{
                     app.login();
                     return;
                 }
-                else {loginStatusLabel.setText("Du er ikke godkendt");}
+                else {
+                    loginStatusLabel.setText("Du er ikke godkendt - Prøv igen senere");
+                    loginStatusLabel.setTextFill(Color.ORANGERED);
+                    return;
+                }
             }
             loginStatusLabel.setText("Forkert ID eller password");
             loginStatusLabel.setTextFill(Color.RED);
